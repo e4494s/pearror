@@ -9,7 +9,7 @@ client.once('ready', () => {
           status: 'online',
           game: {
             name: 'Using ~help',
-            type: 'LISTENING:'
+            type: 'LISTENING'
           }
         });
 });
