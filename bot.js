@@ -11,7 +11,7 @@ client.on('message', message => {
 	if (message.author.bot) return;
 	if (!message.content.startsWith(prefix)) return;
 	let cmd = message.content.split(' ');
-	*if (cmd[0] == '~help') {
+	if (cmd[0] == '~help') {
 		message.channel.send('`~ping`: Return bot latency\n`~echo`: Copy what you say\n`~dice `__`n`__: Roll an __n__ sided dice');
 	}
 	else if (cmd[0] === '~ping') {
