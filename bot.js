@@ -5,6 +5,12 @@ const prefix = '~';
 
 client.once('ready', () => {
 	console.log('Pearror is ready!');
+        client.user.setPresence({
+          game: {
+            name: 'Using ~help',
+            type: 'LISTENING:'
+          }
+        });
 });
 
 client.on('message', message => {
