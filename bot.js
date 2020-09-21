@@ -21,7 +21,9 @@ client.on('message', message => {
     		message.channel.send(message.content.replace('~echo', ''));
     	}
 	else if (cmd[0] == '~dice') {
-		message.channel.send(Math.ceil(Math.random() * Number(message.content.replace('~dice ', ''))));
+		if (cmd.length == 1) { message.channel.send('Please input a number of sides.'); return; }
+		if (cmd.length > 2) { message.channel.send('Please input only one value.'); return; }
+		else message.channel.send(Math.ceil(Math.random() * Number(message.content.replace('~dice ', ''))));
 	}
 	/*if (message.content == '~help') {
 		message.channel.send('`~ping`: Return bot latency\n`~echo`: Copy what you say\n`~dice `__`n`__: Roll an __n__ sided dice');
