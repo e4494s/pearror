@@ -12,7 +12,7 @@ client.on('message', message => {
 	if (!message.content.startsWith(prefix)) return;
 	console.log(message.content);
 	if (message.content == '~help') {
-		message.channel.send('``ping`: Return bot latency\n`~echo`: Copy what you say');
+		message.channel.send('`~ping`: Return bot latency\n`~echo`: Copy what you say\n`~dice `__`n`__: Roll an __n__ sided dice');
 	}
 	else if (message.content === '~ping') {
 		message.channel.send(`Pong, ${message.member.user.username}! \`${Date.now() - message.createdTimestamp}ms\``);
