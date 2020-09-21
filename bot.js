@@ -15,7 +15,7 @@ client.on('message', message => {
                 let user = message.member;
                 user = user.toString();
                 user = client.users.get(user).username;
-		message.channel.send(`Pong, ${user}!`);
+		message.channel.send(`Pong, ${message.member}!`);
 	}
 });
 
