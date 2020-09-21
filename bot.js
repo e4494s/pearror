@@ -5,14 +5,6 @@ const prefix = '~';
 
 client.once('ready', () => {
 	console.log('Pearror is ready!');
-        /*client.user.setPresence({
-          status: 'online',
-          game: {
-            name: 'Using ~help',
-            type: 'LISTENING'
-          }
-        });*/
-        bot.user.setActivity(`this won't appear in the bot's custom status!`, {type: 4});
 });
 
 client.on('message', message => {
