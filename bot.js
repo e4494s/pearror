@@ -15,7 +15,7 @@ client.on('message', message => {
 		message.channel.send(`Pong, ${message.member.user.username}! \`${Date.now() - message.createdTimestamp}ms\``);
 	}
         else if (message.content.startsWith('~echo')) {
-                message.channel.send(message.content.replace('~echo ', ''));
+                message.channel.send(message.content.replace('~echo', ''));
         }
 });
 
