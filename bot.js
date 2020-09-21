@@ -20,6 +20,9 @@ client.on('message', message => {
   	else if (message.content.startsWith('~echo')) {
     	message.channel.send(message.content.replace('~echo', ''));
     }
+	else if (message.content.startsWith('~dice')) {
+		return Math.round(Math.random() * Number(message.content.replace('~dice ', '')));
+	}
 });
 
 client.login(process.env.BOT_TOKEN);
