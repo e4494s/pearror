@@ -12,7 +12,7 @@ client.on('message', message => {
 	if (!message.content.startsWith(prefix)) return;
 	console.log(message.content);
 	if (message.content === '~ping') {
-		message.channel.send(`Pong, ${message.member.toString()}!`);
+		message.channel.send(`Pong, ${message.member.toString().username}!`);
 	}
 });
 
