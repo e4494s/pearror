@@ -14,9 +14,9 @@ client.on('message', message => {
 	if (message.content === '~ping') {
 		message.channel.send(`Pong, ${message.member.user.username}! \`${Date.now() - message.createdTimestamp}ms\``);
 	}
-        else if (message.content.startsWith('~echo')) {
-                message.channel.send(message.content.replace('~echo', ''));
-        }
+  	else if (message.content.startsWith('~echo')) {
+    	message.channel.send(message.content.replace('~echo', ''));
+    }
 });
 
 client.login(process.env.BOT_TOKEN);
