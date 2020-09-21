@@ -21,7 +21,7 @@ client.on('message', message => {
     		message.channel.send(message.content.replace('~echo', ''));
     	}
 	else if (cmd[0] == '~dice') {
-		if (cmd.length == 1 || typeof Number(cmd[1]) != 'number') { message.channel.send('Please input a number of sides.'); return; }
+		if (cmd.length == 1 || typeof Number(cmd[1]) !== 'number') { message.channel.send('Please input a number of sides.'); return; }
 		else if (cmd.length > 2) { message.channel.send('Please input only one value.'); return; }
 		else message.channel.send(Math.ceil(Math.random() * Number(message.content.replace('~dice ', ''))));
 	}
