@@ -25,14 +25,14 @@ client.on('message', message => {
 		else if (cmd.length > 2) { message.channel.send('Please input only one value.'); return; }
 		else message.channel.send(Math.ceil(Math.random() * Number(message.content.replace('~dice ', ''))));
 	}
-	else if (cmd[0] == '~test') {
+	/*else if (cmd[0] == '~test') {
 		let canvas = document.createElement('canvas');
 		let ctx = canvas.getContext('2d');
 		canvas.style = 'width:50px;height:50px;background-color:pink';
 		ctx.fillRect(10, 10, 10, 10);
 		let attachment = new Discord.MessageAttachment(canvas.toBuffer(),'square.png');
 		 message.channel.send('There should be a black square on a pink background (if i did this right)', {files: [attachment]});
-	}
+	}*/
 	/*if (message.content == '~help') {
 		message.channel.send('`~ping`: Return bot latency\n`~echo`: Copy what you say\n`~dice `__`n`__: Roll an __n__ sided dice');
 	}
