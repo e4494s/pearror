@@ -6,10 +6,10 @@ const client = new Discord.Client();
 const prefix = '~';
 
 client.once('ready', () => {
-        let e = new Discord.MessageEmbed()
-        .setColor('FFFF00')
-        .setTitle('Changes successfully loaded.');
-        client.channels.get('754200846530641960').send(e);
+        let embed = new Discord.MessageEmbed()
+        .setTitle('Changes successfully loaded.')
+        .setColor('FFFF00');
+        client.channels.get('754200846530641960').send(embed);
 });
 
 client.on('message', message => {
