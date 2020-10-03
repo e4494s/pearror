@@ -6,8 +6,8 @@ const client = new Discord.Client();
 const prefix = '~';
 
 client.once('ready', () => {
-        let embed = new Discord.MessageEmbed().setTitle('Changes successfully loaded.');
-        client.channels.get('754200846530641960').send(embed);
+        /*let embed = new Discord.MessageEmbed().setTitle('Changes successfully loaded.');
+        client.channels.get('754200846530641960').send(embed);*/
 });
 
 client.on('message', message => {
@@ -29,7 +29,11 @@ client.on('message', message => {
 		else message.channel.send(Math.ceil(Math.random() * Number(message.content.replace('~dice ', ''))));
 	}
 	else if (cmd[0] == '~test') {
-                message.channel.send('Success!');
+                let embed = new Discord.MessageEmbed()
+	        .setTitle('Some title')
+	        .attachFiles(['../assets/discordjs.png'])
+	        .setImage('attachment://discordjs.png');
+                messsage.channel.send(embed);
 	}
 	/*if (message.content == '~help') {
 		message.channel.send('`~ping`: Return bot latency\n`~echo`: Copy what you say\n`~dice `__`n`__: Roll an __n__ sided dice');
