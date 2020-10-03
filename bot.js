@@ -6,8 +6,7 @@ const client = new Discord.Client();
 const prefix = '~';
 
 client.once('ready', () => {
-        /*let embed = new Discord.MessageEmbed().setTitle('Changes successfully loaded.');
-        client.channels.get('754200846530641960').send(embed);*/
+        client.channels.get('754200846530641960').send('`Changes successfully loaded.`');*/
 });
 
 client.on('message', message => {
@@ -30,9 +29,7 @@ client.on('message', message => {
 	}
 	else if (cmd[0] == '~test') {
                 let embed = new Discord.MessageEmbed()
-	        .setTitle('Some title')
-	        .attachFiles(['../assets/discordjs.png'])
-	        .setImage('attachment://discordjs.png');
+	        .setTitle('Hopefully this will be a title');
                 messsage.channel.send(embed);
 	}
 	/*if (message.content == '~help') {
