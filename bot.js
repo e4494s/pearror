@@ -28,7 +28,7 @@ client.on('message', message => {
 		else message.channel.send(Math.ceil(Math.random() * Number(message.content.replace('~dice ', ''))));
 	}
 	else if (cmd[0] == '~testcommand') {
-                const embed = new Discord.RichEmbed this will be a title');
+                let embed = new Discord.RichEmbed().addTitle('Hopefully this will be a title');
                 messsage.channel.send(embed);
 	}
 	/*if (message.content == '~help') {
