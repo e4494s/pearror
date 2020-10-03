@@ -6,7 +6,7 @@ const client = new Discord.Client();
 const prefix = '~';
 
 client.once('ready', () => {
-        '754200846530641960'.send('Pearror is ready!');
+        client.channels.get('754200846530641960').send('*I am alive...*');
 });
 
 client.on('message', message => {
