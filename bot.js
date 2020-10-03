@@ -6,9 +6,7 @@ const client = new Discord.Client();
 const prefix = '~';
 
 client.once('ready', () => {
-        let embed = new Discord.MessageEmbed()
-        .setTitle('Changes successfully loaded.')
-        .setColor('FFFF00');
+        let embed = new Discord.MessageEmbed().setTitle('Changes successfully loaded.');
         client.channels.get('754200846530641960').send(embed);
 });
 
