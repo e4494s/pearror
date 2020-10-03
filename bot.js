@@ -1,6 +1,6 @@
 const Discord = require('discord.js');
 const Canvas = require('canvas');
-
+//test
 const client = new Discord.Client();
 
 const prefix = '~';
