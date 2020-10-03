@@ -1,10 +1,12 @@
 const Discord = require('discord.js');
+//const Canvas = require('canvas');
+
 const client = new Discord.Client();
 
 const prefix = '~';
 
 client.once('ready', () => {
-	console.log('Pearror is ready!');
+        '754200846530641960'.send('Pearror is ready!');
 });
 
 client.on('message', message => {
