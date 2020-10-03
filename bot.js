@@ -6,7 +6,7 @@ const client = new Discord.Client();
 const prefix = '~';
 
 client.once('ready', () => {
-        client.channels.get('754200846530641960').send('`Changes successfully loaded.`');
+        client.channels.get('754200846530641960').send('`Changes successfully loaded.` *I am alive...*');
 });
 
 client.on('message', message => {
@@ -27,11 +27,11 @@ client.on('message', message => {
 		else if (cmd.length > 2) { message.channel.send('Please input only one value.'); return; }
 		else message.channel.send(Math.ceil(Math.random() * Number(message.content.replace('~dice ', ''))));
 	}
-	else if (cmd[0] == '~test') {
+	/*else if (cmd[0] == '~test') {
                 let embed = new Discord.MessageEmbed()
 	        .setTitle('Hopefully this will be a title');
                 messsage.channel.send(embed);
-	}
+	}*/
 	/*if (message.content == '~help') {
 		message.channel.send('`~ping`: Return bot latency\n`~echo`: Copy what you say\n`~dice `__`n`__: Roll an __n__ sided dice');
 	}
