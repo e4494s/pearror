@@ -6,7 +6,10 @@ const client = new Discord.Client();
 const prefix = '~';
 
 client.once('ready', () => {
-        client.channels.get('754200846530641960').send('`Changes loaded.` *I am alive...*');
+        let e = new Discord.MessageEmbed()
+        .setColor('FFFF00')
+        .setTitle('Changes successfully loaded.');
+        client.channels.get('754200846530641960').send(e);
 });
 
 client.on('message', message => {
