@@ -10,8 +10,8 @@ client.once('ready', () => {
 });
 
 client.on('message', message => {
-	if (message.author.bot) return;
         if (message.content.includes('pear')) message.react('🍐');
+        if (message.author.bot) return;
 	if (!message.content.startsWith(prefix)) return;
 	let cmd = message.content.split(' ');
 	if (cmd[0] == '~help') {
