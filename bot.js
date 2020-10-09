@@ -10,7 +10,7 @@ client.once('ready', () => {
 });
 
 client.on('message', message => {
-        if (message.content.toLowercase().includes('pear') || message.content.toLowercase().includes('🍐')) message.react('🍐');
+        if (message.content.toLowerCase().includes('pear') || message.content.toLowerCase().includes('🍐')) message.react('🍐');
         if (message.author.bot) return;
 	if (!message.content.startsWith(prefix)) return;
 	let cmd = message.content.split(' ');
