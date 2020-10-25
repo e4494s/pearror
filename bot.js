@@ -33,7 +33,7 @@ client.on('message', message => {
         else if (cmd[0] == '~testing') {
                 if (testing) testing = false;
                 else testing = true;
-                message.channel.send(`Testing mode set to \`${testing}\`.`;
+                message.channel.send(`Testing mode set to \`${testing}\`.`);
         }
 	/*else if (cmd[0] == '~testcommand') {
                 let embed = new Discord.MessageEmbed().addTitle('Hopefully this will be a title');
