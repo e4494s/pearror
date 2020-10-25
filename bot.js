@@ -6,6 +6,8 @@ const client = new Discord.Client();
 const prefix = '~';
 
 let testing = false;
+let errorID1 = 754413995317789013;
+let errorID2 = 629837671862239247;
 
 client.once('ready', () => {
         if (testing) client.channels.get('754200846530641960').send('`Changes successfully loaded.` *I am alive...*');
