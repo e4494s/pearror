@@ -35,7 +35,7 @@ client.on('message', message => {
 	}
         else if (cmd[0] == '~me') {
                 let sender = client.fetchUser(message.author);
-                message.channel.send(sender.id);
+                message.channel.send(sender.presence.status);
         }
 	/*else if (cmd[0] == '~testcommand') {
                 let embed = new Discord.MessageEmbed().addTitle('Hopefully this will be a title');
