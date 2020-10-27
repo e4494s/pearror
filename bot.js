@@ -33,10 +33,10 @@ client.on('message', message => {
 		else if (cmd.length > 2) { message.channel.send('Please input only one value.'); return; }
 		else message.channel.send(Math.ceil(Math.random() * Number(message.content.replace('~dice ', ''))));
 	}
-        else if (cmd[0] == '~me') {
+        /*else if (cmd[0] == '~me') {
                 let sender = client.fetchUser(message.author);
                 message.channel.send(sender.presence.status);
-        }
+        }*/
 	/*else if (cmd[0] == '~testcommand') {
                 let embed = new Discord.MessageEmbed().addTitle('Hopefully this will be a title');
                 channel.send(embed);
