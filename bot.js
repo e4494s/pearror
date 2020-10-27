@@ -5,8 +5,8 @@ const client = new Discord.Client();
 
 const prefix = '~';
 
-let errorID1 = '754413995317789013';
-let errorID2 = '629837671862239247';
+//let errorID1 = '754413995317789013';
+//let errorID2 = '629837671862239247';
 
 //const error9795 = client.fetchUser(errorID1);
 
@@ -33,10 +33,6 @@ client.on('message', message => {
 		else if (cmd.length > 2) { message.channel.send('Please input only one value.'); return; }
 		else message.channel.send(Math.ceil(Math.random() * Number(message.content.replace('~dice ', ''))));
 	}
-        /*else if (cmd[0] == '~me') {
-                let sender = client.fetchUser(message.author);
-                message.channel.send(sender.presence.status);
-        }*/
 	/*else if (cmd[0] == '~testcommand') {
                 let embed = new Discord.MessageEmbed().addTitle('Hopefully this will be a title');
                 channel.send(embed);
