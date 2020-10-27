@@ -5,13 +5,12 @@ const client = new Discord.Client();
 
 const prefix = '~';
 
-//let errorID1 = '754413995317789013';
-//let errorID2 = '629837671862239247';
-
-//const error9795 = client.fetchUser(errorID1);
+let testing = false;
+let errorID1 = 754413995317789013;
+let errorID2 = 629837671862239247;
 
 client.once('ready', () => {
-        client.channels.get('754200846530641960').send('`Changes successfully loaded.` *I am alive...*');
+        if (testing) client.channels.get('754200846530641960').send('`Changes successfully loaded.` *I am alive...*');
 });
 
 client.on('message', message => {
@@ -33,6 +32,11 @@ client.on('message', message => {
 		else if (cmd.length > 2) { message.channel.send('Please input only one value.'); return; }
 		else message.channel.send(Math.ceil(Math.random() * Number(message.content.replace('~dice ', ''))));
 	}
+        else if (cmd[0] == '~testing') {
+                if (testing) testing = false;
+                else testing = true;
+                message.channel.send(`Testing mode set to \`${testing}\`.`);
+        }
 	/*else if (cmd[0] == '~testcommand') {
                 let embed = new Discord.MessageEmbed().addTitle('Hopefully this will be a title');
                 channel.send(embed);
@@ -46,7 +50,7 @@ client.on('message', message => {
   	else if (message.content.startsWith('~echo')) {
     		message.channel.send(message.content.replace('~echo', ''));
     	}
-	else  if (message.content.startsWith('~dice')) {
+	else if (message.content.startsWith('~dice')) {
 		message.channel.send(Math.ceil(Math.random() * Number(message.content.replace('~dice ', ''))));
 	}*/
 });
