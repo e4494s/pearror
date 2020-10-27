@@ -34,7 +34,8 @@ client.on('message', message => {
 		else message.channel.send(Math.ceil(Math.random() * Number(message.content.replace('~dice ', ''))));
 	}
         else if (cmd[0] == '~me') {
-                message.channel.send(client.fetchUser(message.author));
+                let sender = client.fetchUser(message.author);
+                message.channel.send(sender.id);
         }
 	/*else if (cmd[0] == '~testcommand') {
                 let embed = new Discord.MessageEmbed().addTitle('Hopefully this will be a title');
