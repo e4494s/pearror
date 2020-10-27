@@ -5,9 +5,7 @@ const client = new Discord.Client();
 
 const prefix = '~';
 
-let testing = true;
-let errorID1 = 754413995317789013;
-let errorID2 = 629837671862239247;
+let testing = false;
 
 client.once('ready', () => {
         if (testing) client.channels.get('754200846530641960').send('`Changes successfully loaded.` *I am alive...*');
@@ -35,7 +33,7 @@ client.on('message', message => {
         else if (cmd[0] == '~testing') {
                 if (testing) testing = false;
                 else testing = true;
-                message.channel.send(`Testing mode set to \`${testing}\`.`);
+                message.channel.send(`Testing mode set to \`${testing}\`.`;
         }
 	/*else if (cmd[0] == '~testcommand') {
                 let embed = new Discord.MessageEmbed().addTitle('Hopefully this will be a title');
