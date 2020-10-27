@@ -5,7 +5,7 @@ const client = new Discord.Client();
 
 const prefix = '~';
 
-let testing = false;
+let testing = true;
 let errorID1 = 754413995317789013;
 let errorID2 = 629837671862239247;
 
