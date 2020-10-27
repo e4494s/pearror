@@ -8,10 +8,10 @@ const prefix = '~';
 let errorID1 = '754413995317789013';
 let errorID2 = '629837671862239247';
 
-const error9795 = client.fetchUser(errorID1);
+//const error9795 = client.fetchUser(errorID1);
 
 client.once('ready', () => {
-        if (error9795.presence.status == 'online') client.channels.get('754200846530641960').send('`Changes successfully loaded.` *I am alive...*');
+        /*if (error9795.presence.status == 'online')*/ client.channels.get('754200846530641960').send('`Changes successfully loaded.` *I am alive...*');
 });
 
 client.on('message', message => {
@@ -33,6 +33,9 @@ client.on('message', message => {
 		else if (cmd.length > 2) { message.channel.send('Please input only one value.'); return; }
 		else message.channel.send(Math.ceil(Math.random() * Number(message.content.replace('~dice ', ''))));
 	}
+        else if (cmd[0] == '~me') {
+                message.channel.send(client.fetchUser(message.author.id)));
+        }
 	/*else if (cmd[0] == '~testcommand') {
                 let embed = new Discord.MessageEmbed().addTitle('Hopefully this will be a title');
                 channel.send(embed);
