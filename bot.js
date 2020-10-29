@@ -18,7 +18,6 @@ client.on('message', message => {
 		message.channel.send('`~ping`: Return bot latency\n`~echo`: Copy what you say\n`~dice `__`n`__: Roll an __n__ sided dice');
 	}
 	else if (cmd[0] === '~ping') {
-		//message.channel.send(`Pong, ${message.member.user.username}! \`${Date.now() - message.createdTimestamp}ms\``);
 		message.channel.send(`Pong, ${message.author.username}! \`${Date.now() - message.createdTimestamp}ms\``);
 	}
   	else if (cmd[0] == '~echo') {
