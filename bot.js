@@ -81,7 +81,7 @@ function makeSentence() {
 	return `There once was a ${getAdjective()} ${getNoun()} who liked to ${getVerb()} ${getNoun()}s in his ${getNoun()}.`;
 }
 client.once('ready', () => {
-        client.channels.get('754200846530641960').send('`Changes successfully loaded.` *I am alive...*');
+        //client.channels.get('754200846530641960').send('`Changes successfully loaded.` *I am alive...*');
 });
 
 client.on('message', message => {
