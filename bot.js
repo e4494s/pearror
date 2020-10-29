@@ -24,10 +24,14 @@ let nouns = [
 	'apple',
 	'pear',
 	'banana',
-	'chair'
+	'chair',
+	'mountain',
+	'brick',
+	'trampoline',
+	'planet'
 ];
 
-let verbs = [
+let verbs_present = [
 	'run',
 	'swim',
 	'eat',
@@ -37,7 +41,12 @@ let verbs = [
 	'file',
 	'evade',
 	'attack',
-	'shoot'
+	'shoot',
+	'burn',
+	'toast',
+	'insult',
+	'hack',
+	'cyberbully'
 ];
 
 let adjectives = [
@@ -62,23 +71,20 @@ let adverbs = [
 ];
 
 function getNoun() {
-	if (nouns.length == 0) return '`noun`';
 	let randIndex = Math.floor(Math.random() * nouns.length);
 	return nouns[randIndex];
 }
-function getVerb() {
-	if (verbs.length == 0) return '`verb`';
-	let randIndex = Math.floor(Math.random() * verbs.length);
+function getVerb(tense) {
+	if (tense == 'present') let randIndex = Math.floor(Math.random() * verbs_present.length);
 	return verbs[randIndex];
 }
 function getAdjective() {
-	if (adjectives.length == 0) return '`adjective`';
 	let randIndex = Math.floor(Math.random() * adjectives.length);
 	return adjectives[randIndex];
 }
 
 function makeSentence() {
-	return `There once was a ${getAdjective()} ${getNoun()} who liked to ${getVerb()} ${getNoun()}s in his ${getNoun()}.`;
+	return `There once was a ${getAdjective()} ${getNoun()} who liked to ${getVerb('present')} ${getNoun()}s in his ${getNoun()}.`;
 }
 client.once('ready', () => {
         //client.channels.get('754200846530641960').send('`Changes successfully loaded.` *I am alive...*');
