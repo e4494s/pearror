@@ -15,15 +15,46 @@ let nouns = [
 	'President',
 	'gun',
 	'bomb',
-	'treasure chest'
+	'treasure chest',
+	'egg',
+	'box',
+	'cookie',
+	'pillow',
+	'orange',
+	'apple',
+	'pear',
+	'banana',
+	'chair'
 ];
 
 let verbs = [
-	
+	'run',
+	'swim',
+	'eat',
+	'hide',
+	'murder',
+	'capture',
+	'file',
+	'evade',
+	'attack',
+	'shoot'
 ];
 
 let adjectives = [
-	
+	'tasty',
+	'ugly',
+	'beautiful',
+	'red',
+	'orange',
+	'yellow',
+	'green',
+	'blue',
+	'purple',
+	'smooth',
+	'bumpy',
+	'sour',
+	'flat',
+	'strong'
 ];
 
 let adverbs = [
@@ -47,7 +78,7 @@ function getAdjective() {
 }
 
 function makeSentence() {
-	return `There once was a ${getAdjective()} ${getNoun()} who liked to ${getVerb()} in the ${getNoun()}.`;
+	return `There once was a ${getAdjective()} ${getNoun()} who liked to ${getVerb()} ${getNoun()}s in his ${getNoun()}.`;
 }
 client.once('ready', () => {
         client.channels.get('754200846530641960').send('`Changes successfully loaded.` *I am alive...*');
