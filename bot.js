@@ -90,7 +90,7 @@ client.on('message', message => {
 	if (!message.content.startsWith(prefix)) return;
 	let cmd = message.content.split(' ');
 	if (cmd[0] == '~help') {
-		message.channel.send('`~ping`: Return bot latency\n`~echo`: Copy what you say\n`~dice `__`n`__: Roll an __n__ sided dice');
+		message.channel.send('`~ping`: Return bot latency\n`~echo`: Copy what you say\n`~dice `__`n`__: Roll an __n__ sided dice\n`~story`: Generate a short random story');
 	}
 	else if (cmd[0] === '~ping') {
 		message.channel.send(`Pong, ${message.author.username}! \`${Date.now() - message.createdTimestamp}ms\``);
@@ -103,7 +103,7 @@ client.on('message', message => {
 		else if (cmd.length > 2) { message.channel.send('Please input only one value.'); return; }
 		else message.channel.send(Math.ceil(Math.random() * Number(message.content.replace('~dice ', ''))));
 	}
-	else if (cmd[0] == '~sentence') {
+	else if (cmd[0] == '~story') {
 		message.channel.send(makeSentence());
 	}
 	/*else if (cmd[0] == '~testcommand') {
