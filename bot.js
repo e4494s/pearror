@@ -19,7 +19,7 @@ client.on('message', message => {
 	}
 	else if (cmd[0] === '~ping') {
 		//message.channel.send(`Pong, ${message.member.user.username}! \`${Date.now() - message.createdTimestamp}ms\``);
-		message.channel.send(`Pong, ${message.sender.user.username}!`);
+		message.channel.send(`Pong, ${message.author.user.username}!`);
 	}
   	else if (cmd[0] == '~echo') {
     		message.channel.send(message.content.replace('~echo', ''));
