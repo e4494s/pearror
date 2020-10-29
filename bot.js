@@ -6,7 +6,7 @@ const client = new Discord.Client();
 const prefix = '~';
 
 client.once('ready', () => {
-        //client.channels.get('754200846530641960').send('`Changes successfully loaded.` *I am alive...*');
+        client.channels.get('754200846530641960').send('`Changes successfully loaded.` *I am alive...*');
 });
 
 client.on('message', message => {
@@ -18,7 +18,8 @@ client.on('message', message => {
 		message.channel.send('`~ping`: Return bot latency\n`~echo`: Copy what you say\n`~dice `__`n`__: Roll an __n__ sided dice');
 	}
 	else if (cmd[0] === '~ping') {
-		message.channel.send(`Pong, ${message.member.user.username}! \`${Date.now() - message.createdTimestamp}ms\``);
+		//message.channel.send(`Pong, ${message.member.user.username}! \`${Date.now() - message.createdTimestamp}ms\``);
+		message.channel.send(`Pong, ${message.sender.user.username}!`);
 	}
   	else if (cmd[0] == '~echo') {
     		message.channel.send(message.content.replace('~echo', ''));
