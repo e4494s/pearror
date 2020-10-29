@@ -5,6 +5,50 @@ const client = new Discord.Client();
 
 const prefix = '~';
 
+let nouns = [
+	'ball',
+	'cow',
+	'chicken',
+	'duck',
+	'horse',
+	'house',
+	'President',
+	'gun',
+	'bomb',
+	'treasure chest'
+];
+
+let verbs = [
+	
+];
+
+let adjectives = [
+	
+];
+
+let adverbs = [
+	
+];
+
+function getNoun() {
+	if (nouns.length == 0) return '`noun`';
+	let randIndex = Math.floor(Math.random() * nouns.length);
+	return nouns[randIndex];
+}
+function getVerb() {
+	if (verbs.length == 0) return '`verb`';
+	let randIndex = Math.floor(Math.random() * verbs.length);
+	return verbs[randIndex];
+}
+function getAdjective() {
+	if (adjectives.length == 0) return '`adjective`';
+	let randIndex = Math.floor(Math.random() * adjectives.length);
+	return adjectives[randIndex];
+}
+
+function makeSentence() {
+	return `There once was a ${getAdjective()} ${getNoun()} who liked to ${getVerb()} in the ${getNoun()}.`;
+}
 client.once('ready', () => {
         //client.channels.get('754200846530641960').send('`Changes successfully loaded.` *I am alive...*');
 });
@@ -27,6 +71,9 @@ client.on('message', message => {
 		if (cmd.length == 1 || typeof(Number(cmd[1])) !== 'number') { message.channel.send('Please input a number of sides.'); return; }
 		else if (cmd.length > 2) { message.channel.send('Please input only one value.'); return; }
 		else message.channel.send(Math.ceil(Math.random() * Number(message.content.replace('~dice ', ''))));
+	}
+	else if (cmd[0] == '~sentence') {
+		message.channel.send(makeSentence());
 	}
 	/*else if (cmd[0] == '~testcommand') {
                 let embed = new Discord.MessageEmbed().addTitle('Hopefully this will be a title');
