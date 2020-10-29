@@ -75,8 +75,10 @@ function getNoun() {
 	return nouns[randIndex];
 }
 function getVerb(tense) {
-	if (tense == 'present') let randIndex = Math.floor(Math.random() * verbs_present.length);
-	return verbs[randIndex];
+	if (tense == 'present') {
+		let randIndex = Math.floor(Math.random() * verbs_present.length);
+		return verbs[randIndex];
+	}
 }
 function getAdjective() {
 	let randIndex = Math.floor(Math.random() * adjectives.length);
