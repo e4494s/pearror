@@ -89,6 +89,13 @@ let names = [
 	'Emma',
 	'Emily'
 ];
+let times_of_day = [
+	'day',
+	'night',
+	'morning',
+	'afternoon',
+	'evening'
+]
 
 function getNoun() {
 	let randIndex = Math.floor(Math.random() * nouns.length);
@@ -112,9 +119,15 @@ function getName() {
 	let randIndex = Math.floor(Math.random() * names.length);
 	return names[randIndex];
 }
+function getTimeOfDay() {
+	let randIndex = Math.floor(Math.random() * times_of_day.length);
+	return times_of_day[randIndex];
+}
 
 function makeSentence() {
-	return `There once was a ${getAdjective()} ${getNoun()} named ${getName()} who liked ${getVerb(false).participle} while ${getVerb(true).participle} ${getNoun()}s.`;
+	let mainCharacter = getName();
+	return `There once was a ${getAdjective()} ${getNoun()} named ${mainCharacter} who liked ${getVerb(false).participle}` +
+		`while ${getVerb(true).participle} ${getNoun()}s. One ${getTimeOfDay()} ${mainCharacter} decided to go on an adventure...`;
 }
 
 //
