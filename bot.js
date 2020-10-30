@@ -96,7 +96,7 @@ function getAdjective() {
 }
 
 function makeSentence() {
-	return `There once was a ${getAdjective()} ${getNoun()} who liked to ${getVerb('present')} ${getNoun()}s in his ${getNoun()}.`;
+	return `There once was a ${getAdjective()} ${getNoun()} who liked to ${getVerb('present').present} ${getNoun()}s in his ${getNoun()}.`;
 }
 
 //
@@ -106,7 +106,7 @@ function makeSentence() {
 //
 
 client.once('ready', () => {
-        //client.channels.get('754200846530641960').send('`Changes successfully loaded.` *I am alive...*');
+        client.channels.get('754200846530641960').send('`Changes successfully loaded.` *I am alive...*');
 });
 
 client.on('message', message => {
