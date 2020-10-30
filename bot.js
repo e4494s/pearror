@@ -48,7 +48,11 @@ let transitive_verbs = [
 let intransitive_verbs = [
 	{present: 'run', past: 'ran', participle: 'running'},
 	{present: 'swim', past: 'swam', participle: 'swimming'},
-	{present: 'hide', past: 'hid', participle: 'hiding'}
+	{present: 'hide', past: 'hid', participle: 'hiding'},
+	{present: 'sleep', past: 'slept', participle: 'sleeping'},
+	{present: 'die', past: 'died', participle: 'dying'},
+	{present: 'cuss', past: 'cussed', participle: 'cussing'},
+	{present: 'blink', past: 'blinked', participle: 'blinking'}
 ];
 
 let adjectives = [
