@@ -77,9 +77,14 @@ function getNoun() {
 	return nouns[randIndex];
 }
 function getVerb(transitive) {
-	if (transitive) let randIndex = Math.floor(Math.random() * transitive_verbs.length);
-	else let randIndex = Math.floor(Math.random() * intransitive_verbs.length);
-	return verbs[randIndex];
+	if (transitive) {
+		let randIndex = Math.floor(Math.random() * transitive_verbs.length);
+		return transitive_verbs[randIndex];
+	}
+	else {
+		let randIndex = Math.floor(Math.random() * intransitive_verbs.length);
+		return intransitive_verbs[randIndex];
+	}
 }
 function getAdjective() {
 	let randIndex = Math.floor(Math.random() * adjectives.length);
