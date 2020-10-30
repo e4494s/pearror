@@ -147,6 +147,12 @@ let units_of_time = [
 	'month',
 	'year'
 ];
+let units_of_distance = [
+	{singular: 'inch', plural: 'inches'},
+	{singular: 'foot', plural: 'feet'},
+	{singular: 'yard', plural: 'yards'},
+	{singular: 'mile', plural: 'miles'}
+];
 
 function getNoun(concrete) {
 	if (concrete) {
@@ -188,6 +194,10 @@ function getUnitOfTime() {
 	let randIndex = Math.floor(Math.random() * units_of_time.length);
 	return units_of_time[randIndex];
 }
+function getUnitOfDistance() {
+	let randIndex = Math.floor(Math.random() * units_of_distance.length);
+	return units_of_distance[randIndex];
+}
 
 function makeSentence() {
 	let mainCharacter = getName();
@@ -197,8 +207,9 @@ function makeSentence() {
 	story += `while ${getVerb(true, false).participle} ${getNoun(true)}s. One ${getTimeOfDay()} ${mainCharacter} decided to go on an `;
 	let destination = `${titleCase(getNoun(true))} of ${titleCase(getNoun(false))}`;
 	story += `adventure with ${companion} the ${getNoun(true)}. "We must ${getVerb(false, true).present} to the ${destination}," `;
-	story += `${mainCharacter} said. "It will be a ${getAdjective()} and ${getAdjective()} journey." ${Math.ceil(Math.random() * 100) + 1} `;
-	story += `${getUnitOfTime()}s later, ${mainCharacter} and ${companion} arrived at the ${destination}, feeling very ${getAdjective()}.`;
+	story += `${mainCharacter} said. "It is ${Math.ceil(Math.random() * 100) + 1} ${getUnitOfDistance().plural} away and will be a ${getAdjective()} `;
+	story += `and ${getAdjective()} journey." ${Math.ceil(Math.random() * 100) + 1} ${getUnitOfTime()}s later, ${mainCharacter} and ${companion} `;
+	story += `arrived at the ${destination}, feeling very ${getAdjective()}.`;
 	return story;
 }
 
