@@ -95,7 +95,7 @@ let times_of_day = [
 	'morning',
 	'afternoon',
 	'evening'
-]
+];
 
 function getNoun() {
 	let randIndex = Math.floor(Math.random() * nouns.length);
@@ -126,8 +126,9 @@ function getTimeOfDay() {
 
 function makeSentence() {
 	let mainCharacter = getName();
+	let companion = getName();
 	return `There once was a ${getAdjective()} ${getNoun()} named ${mainCharacter} who liked ${getVerb(false).participle} ` +
-		`while ${getVerb(true).participle} ${getNoun()}s. One ${getTimeOfDay()} ${mainCharacter} decided to go on an adventure...`;
+		`while ${getVerb(true).participle} ${getNoun()}s. One ${getTimeOfDay()} ${mainCharacter} decided to go on an adventure with ${companion} the ${getNoun()}.`;
 }
 
 //
