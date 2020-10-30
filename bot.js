@@ -138,6 +138,15 @@ let times_of_day = [
 	'afternoon',
 	'evening'
 ];
+let units_of_time = [
+	'millisecond',
+	'second',
+	'minute',
+	'day',
+	'week',
+	'month',
+	'year'
+];
 
 function getNoun(concrete) {
 	if (concrete) {
@@ -175,6 +184,10 @@ function getTimeOfDay() {
 	let randIndex = Math.floor(Math.random() * times_of_day.length);
 	return times_of_day[randIndex];
 }
+function getUnitOfTime() {
+	let randIndex = Math.floor(Math.random() * units_of_time.length);
+	return units_of_time[randIndex];
+}
 
 function makeSentence() {
 	let mainCharacter = getName();
@@ -184,8 +197,8 @@ function makeSentence() {
 	story += `while ${getVerb(true, false).participle} ${getNoun(true)}s. One ${getTimeOfDay()} ${mainCharacter} decided to go on an `;
 	let destination = `${titleCase(getNoun(true))} of ${titleCase(getNoun(false))}`;
 	story += `adventure with ${companion} the ${getNoun(true)}. "We must ${getVerb(false, true).present} to the ${destination}," `;
-	story += `${mainCharacter} said. "It will be a ${getAdjective()} and ${getAdjective()} journey." ${Math.ceil(Math.random() * 13) + 1} `;
-	story += `days later, ${mainCharacter} and ${companion} arrived at the ${destination}, feeling very ${getAdjective()}.`;
+	story += `${mainCharacter} said. "It will be a ${getAdjective()} and ${getAdjective()} journey." ${Math.ceil(Math.random() * 100) + 1} `;
+	story += `${getUnitOfTime()}s later, ${mainCharacter} and ${companion} arrived at the ${destination}, feeling very ${getAdjective()}.`;
 	return story;
 }
 
