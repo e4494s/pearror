@@ -88,7 +88,9 @@ let adjectives = [
         'round',
         'cubic',
         'triangular',
-        'pointy'
+        'pointy',
+        'long',
+        'short'
 ];
 
 let names = [
