@@ -162,7 +162,7 @@ function makeSentence() {
 //
 
 client.once('ready', () => {
-        //client.channels.get('754200846530641960').send('`Changes successfully loaded.` *I am alive...*');
+        client.channels.get('754200846530641960').send('`Changes successfully loaded.` *I am alive...*');
 });
 
 client.on('message', message => {
@@ -171,7 +171,7 @@ client.on('message', message => {
 	if (!message.content.startsWith(prefix)) return;
 	let cmd = message.content.split(' ');
 	if (cmd[0] == '~help') {
-		message.channel.send('`~ping`: Return bot latency\n`' +
+		message.channel.send('`~ping`: Return bot latency\n' +
 				     '`~echo`: Copy what you say\n' +
 				     '`~dice `__`n`__: Roll an __n__ sided dice' +
 				     '\n`~story`: Generate a short random story');
