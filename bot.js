@@ -104,7 +104,8 @@ let names = [
 	'Jonathan',
 	'Luke',
 	'Emma',
-	'Emily'
+	'Emily',
+	'Brayden'
 ];
 let times_of_day = [
 	'day',
