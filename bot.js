@@ -162,7 +162,7 @@ function makeSentence() {
 	return `There once was a ${getAdjective()} ${getNoun(true)} named ${mainCharacter} who liked ${getVerb(false).participle} ` +
 		`while ${getVerb(true).participle} ${getNoun(true)}s. One ${getTimeOfDay()} ${mainCharacter} decided to go on an ` +
 		`adventure with ${companion} the ${getNoun(true)}. "We must ${getVerb(false).present} to the ${titleCase(getNoun(true))} ` +
-                `of ${titleCase(getNoun(false))}," they said. It will be a ${getAdjective()} and ${getAdjective()} journey.`;
+                `of ${titleCase(getNoun(false))}," they said. "It will be a ${getAdjective()} and ${getAdjective()} journey."`;
 }
 
 function titleCase(string) {
