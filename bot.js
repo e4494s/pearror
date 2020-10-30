@@ -39,7 +39,7 @@ let abstract_nouns = [
 	'hunger',
 	'love',
 	'evil',
-	'despair'
+	'despair',
 	'anger',
 	'doom'
 ];
