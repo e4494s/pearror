@@ -67,7 +67,23 @@ let intransitive_verbs = [
 	{present: 'die', past: 'died', participle: 'dying'},
 	{present: 'cuss', past: 'cussed', participle: 'cussing'},
 	{present: 'blink', past: 'blinked', participle: 'blinking'},
-	{present: 'drive', past: 'drove', participle: 'driving'}
+	{present: 'fly', past: 'flew', participle: 'flying'},
+	{present: 'drive', past: 'drove', participle: 'driving'},
+	{present: 'dance', past: 'danced', participle: 'dancing'},
+	{present: 'skip', past: 'skipped', participle: 'skipping'},
+	{present: 'bike', past: 'biked', participle: 'biking'},
+	{present: 'crawl', past: 'crawled', participle: 'crawling'}
+];
+let travel_verbs = [
+	{present: 'run', past: 'ran', participle: 'running'},
+	{present: 'swim', past: 'swam', participle: 'swimming'},
+	{present: 'fly', past: 'flew', participle: 'flying'},
+	{present: 'drive', past: 'drove', participle: 'driving'},
+	{present: 'travel', past: 'travelled', participle: 'travelling'},
+	{present: 'dance', past: 'danced', participle: 'dancing'},
+	{present: 'skip', past: 'skipped', participle: 'skipping'},
+	{present: 'bike', past: 'biked', participle: 'biking'},
+	{present: 'crawl', past: 'crawled', participle: 'crawling'}
 ];
 
 let adjectives = [
@@ -133,8 +149,12 @@ function getNoun(concrete) {
 		return abstract_nouns[randIndex];
 	}
 }
-function getVerb(transitive) {
-	if (transitive) {
+function getVerb(transitive, travel) {
+	if (travel) {
+		let randIndex = Math.floor(Math.random() * travel_verbs.length);
+		return travel_verbs[randIndex];
+	}
+	else if (transitive) {
 		let randIndex = Math.floor(Math.random() * transitive_verbs.length);
 		return transitive_verbs[randIndex];
 	}
@@ -159,9 +179,9 @@ function getTimeOfDay() {
 function makeSentence() {
 	let mainCharacter = getName();
 	let companion = getName();
-	return `There once was a ${getAdjective()} ${getNoun(true)} named ${mainCharacter} who liked ${getVerb(false).participle} ` +
-		`while ${getVerb(true).participle} ${getNoun(true)}s. One ${getTimeOfDay()} ${mainCharacter} decided to go on an ` +
-		`adventure with ${companion} the ${getNoun(true)}. "We must ${getVerb(false).present} to the ${titleCase(getNoun(true))} ` +
+	return `There once was a ${getAdjective()} ${getNoun(true)} named ${mainCharacter} who liked ${getVerb(false, false).participle} ` +
+		`while ${getVerb(true, false).participle} ${getNoun(true)}s. One ${getTimeOfDay()} ${mainCharacter} decided to go on an ` +
+		`adventure with ${companion} the ${getNoun(true)}. "We must ${getVerb(false, true).present} to the ${titleCase(getNoun(true))} ` +
                 `of ${titleCase(getNoun(false))}," they said. "It will be a ${getAdjective()} and ${getAdjective()} journey."`;
 }
 
