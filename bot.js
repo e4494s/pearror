@@ -48,7 +48,7 @@ let nouns = [
 	'hack',
 	'cyberbully'
 ];*/
-let verbs_present = [
+let verbs = [
 	{present: 'run', past: 'ran', participle: 'running'},
 	{present: 'swim', past: 'swam', participle: 'swimming'},
 	{present: 'eat', past: 'ate', participle: 'eating'},
@@ -84,11 +84,9 @@ function getNoun() {
 	let randIndex = Math.floor(Math.random() * nouns.length);
 	return nouns[randIndex];
 }
-function getVerb(tense) {
-	if (tense == 'present') {
-		let randIndex = Math.floor(Math.random() * verbs_present.length);
-		return verbs_present[randIndex];
-	}
+function getVerb() {
+	let randIndex = Math.floor(Math.random() * verbs.length);
+	return verbs[randIndex];
 }
 function getAdjective() {
 	let randIndex = Math.floor(Math.random() * adjectives.length);
@@ -96,7 +94,7 @@ function getAdjective() {
 }
 
 function makeSentence() {
-	return `There once was a ${getAdjective()} ${getNoun()} who liked to ${getVerb('present').present} ${getNoun()}s in his ${getNoun()}.`;
+	return `There once was a ${getAdjective()} ${getNoun()} who liked ${getVerb().participle} while ${getVerb().participle} ${getNoun()}s.`;
 }
 
 //
