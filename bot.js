@@ -5,7 +5,7 @@ const client = new Discord.Client();
 
 const prefix = '~';
 
-let nouns = [
+let concrete_nouns = [
 	'ball',
 	'cow',
 	'chicken',
@@ -28,7 +28,20 @@ let nouns = [
 	'mountain',
 	'brick',
 	'trampoline',
-	'planet'
+	'planet',
+	'pit'
+	'cave'
+];
+let abstract_nouns = [
+	'death',
+	'happiness',
+	'sadness',
+	'hunger',
+	'love',
+	'evil',
+	'despair'
+	'anger',
+	'doom'
 ];
 
 let transitive_verbs = [
@@ -101,9 +114,15 @@ let times_of_day = [
 	'evening'
 ];
 
-function getNoun() {
-	let randIndex = Math.floor(Math.random() * nouns.length);
-	return nouns[randIndex];
+function getNoun(concrete) {
+	if (concrete) {
+		let randIndex = Math.floor(Math.random() * concrete_nouns.length);
+		return concrete_nouns[randIndex];
+	}
+	else {
+		let randIndex = Math.floor(Math.random() * abstract_nouns.length);
+		return abstract_nouns[randIndex];
+	}
 }
 function getVerb(transitive) {
 	if (transitive) {
@@ -131,8 +150,9 @@ function getTimeOfDay() {
 function makeSentence() {
 	let mainCharacter = getName();
 	let companion = getName();
-	return `There once was a ${getAdjective()} ${getNoun()} named ${mainCharacter} who liked ${getVerb(false).participle} ` +
-		`while ${getVerb(true).participle} ${getNoun()}s. One ${getTimeOfDay()} ${mainCharacter} decided to go on an adventure with ${companion} the ${getNoun()}.`;
+	return `There once was a ${getAdjective()} ${getNoun(true)} named ${mainCharacter} who liked ${getVerb(false).participle} ` +
+		`while ${getVerb(true).participle} ${getNoun(true)}s. One ${getTimeOfDay()} ${mainCharacter} decided to go on an ` +
+		`adventure with ${companion} the ${getNoun(true)}. "We must ${getVerb(false)} to the ${getNoun(true)} of ${getNoun(false)}," they said.`;
 }
 
 //
