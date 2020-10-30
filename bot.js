@@ -179,10 +179,14 @@ function getTimeOfDay() {
 function makeSentence() {
 	let mainCharacter = getName();
 	let companion = getName();
-	return `There once was a ${getAdjective()} ${getNoun(true)} named ${mainCharacter} who liked ${getVerb(false, false).participle} ` +
-		`while ${getVerb(true, false).participle} ${getNoun(true)}s. One ${getTimeOfDay()} ${mainCharacter} decided to go on an ` +
-		`adventure with ${companion} the ${getNoun(true)}. "We must ${getVerb(false, true).present} to the ${titleCase(getNoun(true))} ` +
-                `of ${titleCase(getNoun(false))}," they said. "It will be a ${getAdjective()} and ${getAdjective()} journey."`;
+	let story = '';
+	story +=  `There once was a ${getAdjective()} ${getNoun(true)} named ${mainCharacter} who liked ${getVerb(false, false).participle} `;
+	story += `while ${getVerb(true, false).participle} ${getNoun(true)}s. One ${getTimeOfDay()} ${mainCharacter} decided to go on an `;
+	let destination = `${titleCase(getNoun(true))} of ${titleCase(getNoun(false))}`;
+	story += `adventure with ${companion} the ${getNoun(true)}. "We must ${getVerb(false, true).present} to the ${destination}," ';
+	story += `${mainCharacter} said. "It will be a ${getAdjective()} and ${getAdjective()} journey." ${Math.ceil(Math.random() * 14))} `;
+	story += `days later, ${mainCharacter} and ${companion} arrived at the ${destination}, feeling very ${getAdjective()}.`;
+	return story;
 }
 
 function titleCase(string) {
