@@ -29,7 +29,7 @@ let concrete_nouns = [
 	'brick',
 	'trampoline',
 	'planet',
-	'pit'
+	'pit',
 	'cave'
 ];
 let abstract_nouns = [
