@@ -141,45 +141,45 @@ let times_of_day = [
 
 function getNoun(concrete) {
 	if (concrete) {
-		concrete_nouns = shuffle(concrete_nouns);
+		shuffle(concrete_nouns);
 		let randIndex = Math.floor(Math.random() * concrete_nouns.length);
 		return concrete_nouns[randIndex];
 	}
 	else {
-		abstract_nouns = shuffle(abstract_nouns);
+		shuffle(abstract_nouns);
 		let randIndex = Math.floor(Math.random() * abstract_nouns.length);
 		return abstract_nouns[randIndex];
 	}
 }
 function getVerb(transitive, travel) {
 	if (travel) {
-		travel_verbs = shuffle(travel_verbs);
+		shuffle(travel_verbs);
 		let randIndex = Math.floor(Math.random() * travel_verbs.length);
 		return travel_verbs[randIndex];
 	}
 	else if (transitive) {
-		transitive_verbs = shuffle(transitive_verbs);
+		shuffle(transitive_verbs);
 		let randIndex = Math.floor(Math.random() * transitive_verbs.length);
 		return transitive_verbs[randIndex];
 	}
 	else {
-		intransitive_verbs = shuffle(intransitive_verbs);
+		shuffle(intransitive_verbs);
 		let randIndex = Math.floor(Math.random() * intransitive_verbs.length);
 		return intransitive_verbs[randIndex];
 	}
 }
 function getAdjective() {
-	adjectives = shuffle(adjectives);
+	shuffle(adjectives);
 	let randIndex = Math.floor(Math.random() * adjectives.length);
 	return adjectives[randIndex];
 }
 function getName() {
-	names = shuffle(names);
+	shuffle(names);
 	let randIndex = Math.floor(Math.random() * names.length);
 	return names[randIndex];
 }
 function getTimeOfDay() {
-	times_of_day = shuffle(times_of_day);
+	shuffle(times_of_day);
 	let randIndex = Math.floor(Math.random() * times_of_day.length);
 	return times_of_day[randIndex];
 }
