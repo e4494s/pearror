@@ -86,6 +86,15 @@ let travel_verbs = [
 	{present: 'crawl', past: 'crawled', participle: 'crawling'}
 ];
 
+let adverbs = [
+	'quickly',
+	'rudely',
+	'violently',
+	'slowly',
+	'repeatedly',
+	'stupidly'
+];
+
 let adjectives = [
 	'tasty',
 	'ugly',
@@ -106,7 +115,11 @@ let adjectives = [
         'triangular',
         'pointy',
         'long',
-        'short'
+        'short',
+	'slimy',
+	'sticky',
+	'wet',
+	'dry'
 ];
 
 let names = [
@@ -178,6 +191,10 @@ function getVerb(transitive, travel) {
 		return intransitive_verbs[randIndex];
 	}
 }
+function getAdverb() {
+	let randIndex = Math.floor(Math.random() * adverbs.length);
+	return adverbs[randIndex];
+}
 function getAdjective() {
 	let randIndex = Math.floor(Math.random() * adjectives.length);
 	return adjectives[randIndex];
@@ -201,15 +218,16 @@ function getUnitOfDistance() {
 
 function makeSentence() {
 	let mainCharacter = getName();
-	let companion = getName();
 	let story = '';
-	story +=  `There once was a ${getAdjective()} ${getNoun(true)} named ${mainCharacter} who liked ${getVerb(false, false).participle} `;
+	story +=  `There once was a ${getAdjective()} ${getNoun(true)} named ${mainCharacter} who liked ${getVerb(false, false).participle} ${getAdverb()} `;
 	story += `while ${getVerb(true, false).participle} ${getNoun(true)}s. One ${getTimeOfDay()} ${mainCharacter} decided to go on an `;
 	let destination = `${titleCase(getNoun(true))} of ${titleCase(getNoun(false))}`;
+	let companion = getName();
 	story += `adventure with ${companion} the ${getNoun(true)}. "We must ${getVerb(false, true).present} to the ${destination}," `;
-	story += `${mainCharacter} said. "It is ${Math.ceil(Math.random() * 100) + 1} ${getUnitOfDistance().plural} away and will be a ${getAdjective()} `;
-	story += `and ${getAdjective()} journey." ${Math.ceil(Math.random() * 100) + 1} ${getUnitOfTime()}s later, ${mainCharacter} and ${companion} `;
-	story += `arrived at the ${destination}, feeling very ${getAdjective()}.`;
+	story += `${mainCharacter} said. "It will be a ${getAdjective()} and ${getAdjective()} journey." ${Math.ceil(Math.random() * 100) + 1} `;
+	story += `${getUnitOfTime()}s later, after travelling ${Math.ceil(Math.random() * 100) + 1} ${getUnitOfDistance().plural}, ${mainCharacter} `;
+	story += `and ${companion} arrived at the ${destination}, feeling very ${getAdjective()}. As soon as they arrived, a ${getAdjective()} `;
+	story += `${getNoun(true)} ${getVerb(true, false).past} them ${getAdverb()}.`;
 	return story;
 }
 
