@@ -68,8 +68,26 @@ let adjectives = [
 	'strong'
 ];
 
-let adverbs = [
-	
+let names = [
+	'Bob',
+	'Sam',
+	'Frank',
+	'Gary',
+	'Edgar',
+	'Chris',
+	'Katie',
+	'Lauren',
+	'Zoey',
+	'Sydney',
+	'Noah',
+	'Abigail',
+	'Carl',
+	'David',
+	'Randall',
+	'Jonathan',
+	'Luke',
+	'Emma',
+	'Emily'
 ];
 
 function getNoun() {
@@ -90,9 +108,13 @@ function getAdjective() {
 	let randIndex = Math.floor(Math.random() * adjectives.length);
 	return adjectives[randIndex];
 }
+function getName() {
+	let randIndex = Math.floor(Math.random() * names.length);
+	return names[randIndex];
+}
 
 function makeSentence() {
-	return `There once was a ${getAdjective()} ${getNoun()} who liked ${getVerb(false).participle} while ${getVerb(true).participle} ${getNoun()}s.`;
+	return `There once was a ${getAdjective()} ${getNoun()} named ${getName()} who liked ${getVerb(false).participle} while ${getVerb(true).participle} ${getNoun()}s.`;
 }
 
 //
