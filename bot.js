@@ -184,7 +184,7 @@ function makeSentence() {
 	story += `while ${getVerb(true, false).participle} ${getNoun(true)}s. One ${getTimeOfDay()} ${mainCharacter} decided to go on an `;
 	let destination = `${titleCase(getNoun(true))} of ${titleCase(getNoun(false))}`;
 	story += `adventure with ${companion} the ${getNoun(true)}. "We must ${getVerb(false, true).present} to the ${destination}," `;
-	story += `${mainCharacter} said. "It will be a ${getAdjective()} and ${getAdjective()} journey." ${Math.ceil(Math.random() * 14)} `;
+	story += `${mainCharacter} said. "It will be a ${getAdjective()} and ${getAdjective()} journey." ${Math.ceil(Math.random() * 13) + 1} `;
 	story += `days later, ${mainCharacter} and ${companion} arrived at the ${destination}, feeling very ${getAdjective()}.`;
 	return story;
 }
