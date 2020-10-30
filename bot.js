@@ -31,32 +31,24 @@ let nouns = [
 	'planet'
 ];
 
-/*let verbs_present = [
-	'run',
-	'swim',
-	'eat',
-	'hide',
-	'murder',
-	'capture',
-	'file',
-	'evade',
-	'attack',
-	'shoot',
-	'burn',
-	'toast',
-	'insult',
-	'hack',
-	'cyberbully'
-];*/
-let verbs = [
-	{present: 'run', past: 'ran', participle: 'running'},
-	{present: 'swim', past: 'swam', participle: 'swimming'},
+let transitive_verbs = [
 	{present: 'eat', past: 'ate', participle: 'eating'},
-	{present: 'hide', past: 'hid', participle: 'hiding'},
 	{present: 'murder', past: 'murdered', participle: 'murdering'},
 	{present: 'capture', past: 'captured', participle: 'capturing'},
 	{present: 'file', past: 'filed', participle: 'filing'},
-	{present: 'evade', past: 'evaded', participle: 'evading'}
+	{present: 'evade', past: 'evaded', participle: 'evading'},
+	{present: 'attack', past: 'attacked', participle: 'attacking'},
+	{present: 'shoot', past: 'shot', participle: 'shooting'},
+	{present: 'burn', past: 'burned', participle: 'burning'},
+	{present: 'toast', past: 'toasted', participle: 'toasting'},
+	{present: 'insult', past: 'insulted', participle: 'insulting'},
+	{present: 'hack', past: 'hacked', participle: 'hacking'},
+	{present: 'cyberbully', past: 'cyberbullied', participle: 'cyberbullying'}
+];
+let intransitive_verbs = [
+	{present: 'run', past: 'ran', participle: 'running'},
+	{present: 'swim', past: 'swam', participle: 'swimming'},
+	{present: 'hide', past: 'hid', participle: 'hiding'},
 ];
 
 let adjectives = [
@@ -84,8 +76,9 @@ function getNoun() {
 	let randIndex = Math.floor(Math.random() * nouns.length);
 	return nouns[randIndex];
 }
-function getVerb() {
-	let randIndex = Math.floor(Math.random() * verbs.length);
+function getVerb(transitive) {
+	if (transitive) let randIndex = Math.floor(Math.random() * transitive_verbs.length);
+	else let randIndex = Math.floor(Math.random() * intransitive_verbs.length);
 	return verbs[randIndex];
 }
 function getAdjective() {
@@ -94,7 +87,7 @@ function getAdjective() {
 }
 
 function makeSentence() {
-	return `There once was a ${getAdjective()} ${getNoun()} who liked ${getVerb().participle} while ${getVerb().participle} ${getNoun()}s.`;
+	return `There once was a ${getAdjective()} ${getNoun()} who liked ${getVerb(false).participle} while ${getVerb(true).participle} ${getNoun()}s.`;
 }
 
 //
@@ -113,7 +106,10 @@ client.on('message', message => {
 	if (!message.content.startsWith(prefix)) return;
 	let cmd = message.content.split(' ');
 	if (cmd[0] == '~help') {
-		message.channel.send('`~ping`: Return bot latency\n`~echo`: Copy what you say\n`~dice `__`n`__: Roll an __n__ sided dice\n`~story`: Generate a short random story');
+		message.channel.send('`~ping`: Return bot latency\n`' +
+				     '`~echo`: Copy what you say\n' +
+				     '`~dice `__`n`__: Roll an __n__ sided dice' +
+				     '\n`~story`: Generate a short random story');
 	}
 	else if (cmd[0] === '~ping') {
 		message.channel.send(`Pong, ${message.author.username}! \`${Date.now() - message.createdTimestamp}ms\``);
