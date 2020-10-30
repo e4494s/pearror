@@ -31,7 +31,7 @@ let nouns = [
 	'planet'
 ];
 
-let verbs_present = [
+/*let verbs_present = [
 	'run',
 	'swim',
 	'eat',
@@ -47,6 +47,16 @@ let verbs_present = [
 	'insult',
 	'hack',
 	'cyberbully'
+];*/
+let verbs_present = [
+	{present: 'run', past: 'ran', participle: 'running'},
+	{present: 'swim', past: 'swam', participle: 'swimming'},
+	{present: 'eat', past: 'ate', participle: 'eating'},
+	{present: 'hide', past: 'hid', participle: 'hiding'},
+	{present: 'murder', past: 'murdered', participle: 'murdering'},
+	{present: 'capture', past: 'captured', participle: 'capturing'},
+	{present: 'file', past: 'filed', participle: 'filing'},
+	{present: 'evade', past: 'evaded', participle: 'evading'}
 ];
 
 let adjectives = [
