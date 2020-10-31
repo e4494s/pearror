@@ -259,7 +259,7 @@ client.once('ready', () => {
 
 client.on('message', message => {
         if (message.content.toLowerCase().includes('pear') || message.content.toLowerCase().includes('🍐')) message.react('🍐');
-	if (message.includes('~poll')) {
+	if (message.content.includes('~poll')) {
 		message.react('👍');
 		message.react('👎');
 	}
