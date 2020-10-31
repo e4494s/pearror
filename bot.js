@@ -259,10 +259,10 @@ client.once('ready', () => {
 
 client.on('message', message => {
         if (message.content.toLowerCase().includes('pear') || message.content.toLowerCase().includes('🍐')) message.react('🍐');
-	if (message.content.includes('~poll')) {
+	if (message.content.includes('~poll')).then(async function(message) {
 		await message.react('👍');
 		await message.react('👎');
-	}
+	});
         if (message.author.bot) return;
 	if (!message.content.startsWith(prefix)) return;
 	let cmd = message.content.split(' ');
