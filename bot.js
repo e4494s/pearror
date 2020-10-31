@@ -259,12 +259,7 @@ client.once('ready', () => {
 
 client.on('message', message => {
         if (message.content.toLowerCase().includes('pear') || message.content.toLowerCase().includes('🍐')) message.react('🍐');
-	if (message.content.includes('~poll')) {
-		let timeout = 0;
-		if (timeout == 0) message.react('👍');
-		while (timeout < 10) timeout++;
-		if (timeout == 10) message.react('👎');
-	}
+	if (message.content.includes('~poll')) message.react('👍').then(() => message.react('👎'));
         if (message.author.bot) return;
 	if (!message.content.startsWith(prefix)) return;
 	let cmd = message.content.split(' ');
