@@ -1,5 +1,4 @@
 const Discord = require('discord.js');
-//const Canvas = require('canvas');
 
 const client = new Discord.Client();
 
@@ -30,7 +29,11 @@ let concrete_nouns = [
 	'planet',
 	'pit',
 	'cave',
-        'pencil'
+        'pencil',
+	'computer',
+	'marble'
+	'bean bag',
+	'carrot'
 ];
 let abstract_nouns = [
 	'death',
@@ -42,7 +45,12 @@ let abstract_nouns = [
 	'despair',
 	'anger',
 	'doom',
-        'fear'
+        'fear',
+	'health',
+	'justice',
+	'mercy',
+	'mystery',
+	'shame'
 ];
 
 let transitive_verbs = [
@@ -92,7 +100,10 @@ let adverbs = [
 	'violently',
 	'slowly',
 	'repeatedly',
-	'stupidly'
+	'stupidly',
+	'lamely',
+	'ridiculously',
+	'intelligently'
 ];
 
 let adjectives = [
@@ -164,7 +175,8 @@ let units_of_distance = [
 	{singular: 'inch', plural: 'inches'},
 	{singular: 'foot', plural: 'feet'},
 	{singular: 'yard', plural: 'yards'},
-	{singular: 'mile', plural: 'miles'}
+	{singular: 'mile', plural: 'miles'},
+	{singular: 'lightyear', plural: 'lightyears'}
 ];
 
 function getNoun(concrete) {
