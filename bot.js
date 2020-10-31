@@ -31,7 +31,7 @@ let concrete_nouns = [
 	'cave',
         'pencil',
 	'computer',
-	'marble'
+	'marble',
 	'bean bag',
 	'carrot'
 ];
