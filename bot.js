@@ -260,8 +260,8 @@ client.once('ready', () => {
 client.on('message', message => {
         if (message.content.toLowerCase().includes('pear') || message.content.toLowerCase().includes('🍐')) message.react('🍐');
 	if (message.content.includes('~poll')) {
-		let timeout = 0;
 		message.react('👍');
+		let timeout = 0;
 		while (timeout < 10) timeout++
 		message.react('👎');
 	}
