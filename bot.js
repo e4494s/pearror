@@ -260,8 +260,10 @@ client.once('ready', () => {
 client.on('message', message => {
         if (message.content.toLowerCase().includes('pear') || message.content.toLowerCase().includes('🍐')) message.react('🍐');
 	if (message.content.includes('~poll')) {
+		let timeout = 0;
 		message.react('👍');
-		setTimeout(message.react('👎'), 50);
+		while (timeout < 10) timeout++
+		message.react('👎');
 	}
         if (message.author.bot) return;
 	if (!message.content.startsWith(prefix)) return;
