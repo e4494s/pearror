@@ -276,10 +276,14 @@ client.on('message', message => {
 	if (!message.content.startsWith(prefix)) return;
 	let cmd = message.content.split(' ');
 	if (cmd[0] == '~help') {
-		message.channel.send('`~ping`: Return bot latency\n' +
-				     '`~echo`: Copy what you say\n' +
-				     '`~dice `__`n`__: Roll an __n__ sided dice' +
-				     '\n`~story`: Generate a short random story');
+		message.channel.send(
+			'`~ping`: Return bot latency\n' +
+			'`~echo`: Copy what you say\n' +
+			'`~dice `__`n`__: Roll an __n__ sided dice\n' +
+			'`~story`: Generate a short random story\n' +
+			'`~poll`: Add 👍 and 👎 reacts to your message\n' +
+			'`~randomcase`: Convert your message to rANdOm CasE'
+		);
 	}
 	else if (cmd[0] === '~ping') {
 		message.channel.send(`Pong, ${message.author.username}! \`${Date.now() - message.createdTimestamp}ms\``);
@@ -294,6 +298,19 @@ client.on('message', message => {
 	}
 	else if (cmd[0] == '~story') {
 		message.channel.send(makeSentence());
+	}
+	else if (cmd[0] == '~randomcase') {
+		let msg = message.content.replace('~randomcase ', '');
+		let new_msg = '';
+		if (msg == '') {
+			message.channel.send('Please input a sentence to apply randomcase to.');
+			return;
+		}
+		for (let i = 0; i < msg.length; i++) {
+			if (Math.round(Math.random()) == 0) new_msg += msg[i].toUpperCase();
+			else new_msg += msg[i].toLowerCase();
+		}
+		message.channel.send(new_msg);
 	}
 	/*else if (cmd[0] == '~testcommand') {
                 let embed = new Discord.MessageEmbed().addTitle('Hopefully this will be a title');
