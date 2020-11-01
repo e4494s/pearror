@@ -284,6 +284,7 @@ client.on('message', message => {
 			'`~poll`: Add 👍 and 👎 reacts to your message\n' +
 			'`~randomcase`: Convert your message to rANdOm CasE'
 		);
+		return;
 	}
 	else if (cmd[0] === '~ping') {
 		message.channel.send(`Pong, ${message.author.username}! \`${Date.now() - message.createdTimestamp}ms\``);
@@ -300,7 +301,7 @@ client.on('message', message => {
 		message.channel.send(makeSentence());
 	}
 	else if (cmd[0] == '~randomcase') {
-		let msg = message.content.replace('~randomcase ', '');
+		let msg = message.content.replace('~randomcase', '');
 		let new_msg = '';
 		if (msg == '') {
 			message.channel.send('Please input a sentence to apply randomcase to.');
