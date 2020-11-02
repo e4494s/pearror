@@ -282,7 +282,7 @@ client.on('message', message => {
 			'`~dice `__`n`__: Roll an __n__ sided dice\n' +
 			'`~story`: Generate a short random story\n' +
 			'`~poll`: Add 👍 and 👎 reacts to your message\n' +
-			'`~randomcase`: Convert your message to rANdOm CasE'
+			'`~randomcase`/`~rdmc`: Convert your message to rANdOm CasE'
 		);
 		return;
 	}
@@ -300,7 +300,7 @@ client.on('message', message => {
 	else if (cmd[0] == '~story') {
 		message.channel.send(makeSentence());
 	}
-	else if (cmd[0] == '~randomcase') {
+	else if (cmd[0] == '~randomcase' || cmd[0] == '~rdmc') {
 		let msg = message.content.replace('~randomcase', '');
 		let new_msg = '';
 		if (msg == '') {
