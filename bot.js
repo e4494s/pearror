@@ -316,8 +316,11 @@ client.on('message', message => {
 	}
 	else if (cmd[0] == '~testcommand') {
 		try {
-			const exampleEmbed = new client.MessageEmbed().setTitle('Some title');
-			message.channel.send(exampleEmbed);
+			let mbd = {
+				color: 0xffff00,
+				title: 'Hello'
+			};
+			message.channel.send({embed: mbd});
 		}
 		catch(err) {
   			message.channel.send(err.message);
