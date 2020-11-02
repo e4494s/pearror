@@ -302,6 +302,7 @@ client.on('message', message => {
 	}
 	else if (cmd[0] == '~randomcase' || cmd[0] == '~rdmc') {
 		let msg = message.content.replace('~randomcase', '');
+		msg = message.content.replace('~rdmc', '');
 		let new_msg = '';
 		if (msg == '') {
 			message.channel.send('Please input a sentence to apply randomcase to.');
