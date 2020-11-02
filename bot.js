@@ -316,7 +316,12 @@ client.on('message', message => {
 	}
 	else if (cmd[0] == '~testcommand') {
 		const exampleEmbed = new Discord.MessageEmbed().setTitle('Some title');
-		message.channel.send(exampleEmbed);
+		try {
+			message.channel.send(exampleEmbed);
+		}
+		catch(err) {
+  			message.channel.send(err.message);
+		}
 	}
 	/*if (message.content == '~help') {
 		message.channel.send('`~ping`: Return bot latency\n`~echo`: Copy what you say\n`~dice `__`n`__: Roll an __n__ sided dice');
