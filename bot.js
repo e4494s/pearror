@@ -314,10 +314,10 @@ client.on('message', message => {
 		}
 		message.channel.send(new_msg);
 	}
-	/*else if (cmd[0] == '~testcommand') {
-                let embed = new Discord.MessageEmbed().addTitle('Hopefully this will be a title');
+	else if (cmd[0] == '~testcommand') {
+                let embed = new Discord.RichEmbed().addTitle('Hopefully this will be a title');
                 channel.send(embed);
-	}*/
+	}
 	/*if (message.content == '~help') {
 		message.channel.send('`~ping`: Return bot latency\n`~echo`: Copy what you say\n`~dice `__`n`__: Roll an __n__ sided dice');
 	}
