@@ -340,7 +340,14 @@ client.on('message', message => {
 	else if (cmd[0] == '~me') {
 		try {
 			let auth = message.author;
-			message.channel.send(`You are ${auth.username}#${auth.discriminator}.`);
+			let mbd = {
+				color: 0xffff00,
+				author: {
+					name: `${auth.username}#${auth.discriminator}`,
+					icon_url: auth.avatarURL
+				}
+			};
+			message.channel.send({embed: mbd});
 		}
 		catch(err) {
 			message.channel.send(err.message);
