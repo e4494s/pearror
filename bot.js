@@ -316,11 +316,13 @@ client.on('message', message => {
 	}
 	else if (cmd[0] == '~testcommand') {
 		try {
-			let mbd = {
+			/*let mbd = {
 				color: 0xffff00,
 				title: 'Hello'
 			};
-			message.channel.send({embed: mbd});
+			message.channel.send({embed: mbd});*/
+			let $embed = new Discord.embed().setTitle('Hello');
+			message.channel.send($embed);
 		}
 		catch(err) {
   			message.channel.send(err.message);
