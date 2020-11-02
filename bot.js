@@ -315,8 +315,24 @@ client.on('message', message => {
 		message.channel.send(new_msg);
 	}
 	else if (cmd[0] == '~testcommand') {
-                let embed = new Discord.RichEmbed().addTitle('Hopefully this will be a title');
-                channel.send(embed);
+                const exampleEmbed = new Discord.MessageEmbed()
+	.setColor('#0099ff')
+	.setTitle('Some title')
+	.setURL('https://discord.js.org/')
+	.setAuthor('Some name', 'https://discord.js.org')
+	.setDescription('Some description here')
+	.addFields(
+		{ name: 'Regular field title', value: 'Some value here' },
+		{ name: '\u200B', value: '\u200B' },
+		{ name: 'Inline field title', value: 'Some value here', inline: true },
+		{ name: 'Inline field title', value: 'Some value here', inline: true },
+	)
+	.addField('Inline field title', 'Some value here', true)
+	.setTimestamp()
+	.setFooter('Some footer text here');
+
+channel.send(exampleEmbed);
+
 	}
 	/*if (message.content == '~help') {
 		message.channel.send('`~ping`: Return bot latency\n`~echo`: Copy what you say\n`~dice `__`n`__: Roll an __n__ sided dice');
