@@ -331,7 +331,7 @@ client.on('message', message => {
 	.setTimestamp()
 	.setFooter('Some footer text here');
 
-channel.send(exampleEmbed);
+message.channel.send(exampleEmbed);
 
 	}
 	/*if (message.content == '~help') {
