@@ -315,16 +315,41 @@ client.on('message', message => {
 		message.channel.send(new_msg);
 	}
 	else if (cmd[0] == '~testcommand') {
-		try {
-			let mbd = {
-				color: `rgb(${Math.floor(Math.random() * 256)}, ${Math.floor(Math.random() * 256)}, ${Math.floor(Math.random() * 256)}`,
-				title: 'Hello'
-			};
-			message.channel.send({embed: mbd});
-		}
-		catch(err) {
-  			message.channel.send(err.message);
-		}
+		let mbd = {
+			color: 0xffff00,
+			title: 'Hello',
+			fields: [
+				{
+					name: '`~echo`',
+					value: 'Copy what you say'
+				},
+				{
+					name: '`~dice `__`n`__',
+					value: 'Roll an __n__ sided die'
+				},
+				{
+					name: '`~story`',
+					value: 'Generate a random short story'
+				},
+				{
+					name: '`~poll`',
+					value: 'Add 👍 and 👎 reacts to your message'
+				},
+				{
+					name: '`~randomcase`/`~rdmc`',
+					value: 'Convert your message to rANdOm CasE'
+				}
+			]
+		};
+		message.channel.send({embed: mbd});
+		/*
+		'`~ping`: Return bot latency\n' +
+			'`~echo`: Copy what you say\n' +
+			'`~dice `__`n`__: Roll an __n__ sided dice\n' +
+			'`~story`: Generate a short random story\n' +
+			'`~poll`: Add 👍 and 👎 reacts to your message\n' +
+			'`~randomcase`/`~rdmc`: Convert your message to rANdOm CasE'
+		*/
 	}
 	/*if (message.content == '~help') {
 		message.channel.send('`~ping`: Return bot latency\n`~echo`: Copy what you say\n`~dice `__`n`__: Roll an __n__ sided dice');
