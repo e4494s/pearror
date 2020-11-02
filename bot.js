@@ -276,15 +276,33 @@ client.on('message', message => {
 	if (!message.content.startsWith(prefix)) return;
 	let cmd = message.content.split(' ');
 	if (cmd[0] == '~help') {
-		message.channel.send(
-			'`~ping`: Return bot latency\n' +
-			'`~echo`: Copy what you say\n' +
-			'`~dice `__`n`__: Roll an __n__ sided dice\n' +
-			'`~story`: Generate a short random story\n' +
-			'`~poll`: Add 👍 and 👎 reacts to your message\n' +
-			'`~randomcase`/`~rdmc`: Convert your message to rANdOm CasE'
-		);
-		return;
+		let mbd = {
+			color: 0xffff00,
+			title: 'Pearror Commands',
+			fields: [
+				{
+					name: '`~echo`',
+					value: 'Copy what you say'
+				},
+				{
+					name: '`~dice `__`n`__',
+					value: 'Roll an __n__ sided die'
+				},
+				{
+					name: '`~story`',
+					value: 'Generate a random short story'
+				},
+				{
+					name: '`~poll`',
+					value: 'Add 👍 and 👎 reacts to your message'
+				},
+				{
+					name: '`~randomcase`/`~rdmc`',
+					value: 'Convert your message to rANdOm CasE'
+				}
+			]
+		};
+		message.channel.send({embed: mbd});
 	}
 	else if (cmd[0] === '~ping') {
 		message.channel.send(`Pong, ${message.author.username}! \`${Date.now() - message.createdTimestamp}ms\``);
@@ -317,7 +335,7 @@ client.on('message', message => {
 	else if (cmd[0] == '~testcommand') {
 		let mbd = {
 			color: 0xffff00,
-			title: 'Hello',
+			title: 'Pearror Commands',
 			fields: [
 				{
 					name: '`~echo`',
