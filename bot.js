@@ -339,8 +339,8 @@ client.on('message', message => {
 	}
 	else if (cmd[0] == '~me') {
 		try {
-			let $user = client.fetchUser(message.author);
-			message.channel.send($user.discriminator);
+			let auth = message.author;
+			message.channel.send(`You are ${auth.username}#${auth.discriminator}.`);
 		}
 		catch(err) {
 			message.channel.send(err.message);
