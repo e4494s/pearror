@@ -321,7 +321,7 @@ client.on('message', message => {
 				title: 'Hello'
 			};
 			message.channel.send({embed: mbd});*/
-			let $embed = new Discord.embed().setTitle('Hello');
+			let $embed = new Discord.Embed().setTitle('Hello');
 			message.channel.send($embed);
 		}
 		catch(err) {
