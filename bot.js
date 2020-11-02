@@ -330,8 +330,7 @@ client.on('message', message => {
 	.addField('Inline field title', 'Some value here', true)
 	.setTimestamp()
 	.setFooter('Some footer text here');
-
-message.channel.send(exampleEmbed);
+channel.send(exampleEmbed);
 
 	}
 	/*if (message.content == '~help') {
