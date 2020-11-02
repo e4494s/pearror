@@ -278,8 +278,15 @@ client.on('message', message => {
 	if (cmd[0] == '~help') {
 		let mbd = {
 			color: 0xffff00,
-			title: 'Pearror Commands',
+			author: {
+				name: 'Pearror Commands',
+				icon_url: 'https://media.discordapp.net/attachments/749125883838595154/749125913412763728/Pearror404.png'
+			},
 			fields: [
+				{
+					name: '`~ping`',
+					value: 'Return bot latency'
+				},
 				{
 					name: '`~echo`',
 					value: 'Copy what you say'
