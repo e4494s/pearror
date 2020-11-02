@@ -316,7 +316,7 @@ client.on('message', message => {
 	}
 	else if (cmd[0] == '~testcommand') {
 		try {
-			const exampleEmbed = new Discord.MessageEmbed().setTitle('Some title');
+			const exampleEmbed = new client.MessageEmbed().setTitle('Some title');
 			message.channel.send(exampleEmbed);
 		}
 		catch(err) {
