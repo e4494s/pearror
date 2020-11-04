@@ -358,7 +358,7 @@ client.on('message', message => {
 	}
 	else if (cmd[0] == '~rockpaperscissors' || cmd[0] == '~rps') {
 		try { //
-		/*let mbd = {
+		let mbd = {
 			color: 0xffffff,
 			author: {
 				name: 'Rock Paper Scissors',
@@ -367,12 +367,11 @@ client.on('message', message => {
 			fields: [
 				{
 					name: '<:rps_rock:773578979377807371> <:rps_paper:773579262048469062> <:rps_scissors:773579699565101117>',
-					value: null
+					value: ''
 				}
 			]
 		}
-		message.channel.send({embed : mbd});*/
-                message.channel.send('Test');
+		message.channel.send({embed: mbd});
 		} //
 		catch (err) { message.channel.send(err.message); }
 	}
