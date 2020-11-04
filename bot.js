@@ -268,7 +268,6 @@ client.once('ready', () => {
 });
 
 client.on('message', message => {
-	try { //
 	if (message.author.bot) return;
 	if (message.content.toLowerCase().includes('pear') || message.content.toLowerCase().includes('🍐')) message.react('🍐');
 	if (message.content.includes('~poll')) message.react('👍').then(() => message.react('👎'));
@@ -358,7 +357,7 @@ client.on('message', message => {
 		message.channel.send({embed: mbd});
 	}
 	else if (cmd[0] == '~rockpaperscissors' || cmd[0] == '~rps') {
-		//try { //
+		try { //
 		let mbd = {
 			color: 0xffffff,
 			author: {
@@ -373,8 +372,8 @@ client.on('message', message => {
 			]
 		}
 		message.channel.send({embed : mbd});
-		//} //
-		//catch (err) { message.channel.send(err.message); }
+		} //
+		catch (err) { message.channel.send(err.message); }
 	}
 	else if (cmd[0] == '~testcommand') {
 		
@@ -391,8 +390,6 @@ client.on('message', message => {
 	else if (message.content.startsWith('~dice')) {
 		message.channel.send(Math.ceil(Math.random() * Number(message.content.replace('~dice ', ''))));
 	}*/
-	} //
-	catch (er) { message.channel.send(er.message); }
 });
 
 client.login(process.env.BOT_TOKEN);
