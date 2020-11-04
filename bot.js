@@ -370,7 +370,8 @@ client.on('message', message => {
 			},
 			fields: [
 				{
-					name: '<:rps_rock:773578979377807371> <:rps_paper:773579262048469062> <:rps_scissors:773579699565101117>'
+					name: '<:rps_rock:773578979377807371> <:rps_paper:773579262048469062> <:rps_scissors:773579699565101117>',
+					value: null
 				}
 			]
 		}
