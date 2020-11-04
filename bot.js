@@ -359,7 +359,7 @@ client.on('message', message => {
 	else if (cmd[0] == '~rockpaperscissors' || cmd[0] == '~rps') {
 		try { //
 		let mbd = {
-			color: 0xffffff,
+			color: 'white',
 			author: {
 				name: 'Rock Paper Scissors',
 				icon_url: 'https://media.discordapp.net/attachments/755763092159332363/773688146755715122/rps_icon.png'
