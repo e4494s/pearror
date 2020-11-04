@@ -372,7 +372,7 @@ client.on('message', message => {
 			]
 		}
 		message.channel.send({embed: mbd});*/
-                message.channel.send('hi' * 5);
+                message.channel.send(hello);
 		}
 		catch (err) { message.channel.send(err.message); }
 	}
