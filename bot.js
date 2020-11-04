@@ -362,9 +362,7 @@ client.on('message', message => {
 			color: 0xffffff,
 			author: {
 				name: 'Rock Paper Scissors'
-			},
-			thumbnail: {
-				url: 'https://media.discordapp.net/attachments/755762464184074334/773581913414828062/rps.png'
+				icon_url: 'https://media.discordapp.net/attachments/755763092159332363/773688146755715122/rps_icon.png'
 			},
 			description: '<:rps_rock:773578979377807371> <:rps_paper:773579262048469062> <:rps_scissors:773579699565101117>'
 		};
