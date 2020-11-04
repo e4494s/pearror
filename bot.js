@@ -357,23 +357,20 @@ client.on('message', message => {
 		message.channel.send({embed: mbd});
 	}
 	else if (cmd[0] == '~rockpaperscissors' || cmd[0] == '~rps') {
-		try {
+		try { //
 		let mbd = {
 			color: 0xffffff,
 			author: {
-				name: 'Rock Paper Scissors',
-				icon_url: 'https://media.discordapp.net/attachments/755762464184074334/773581913414828062/rps.png'
+				name: 'Rock Paper Scissors'
 			},
-			fields: [
-				{
-					name: '<:rps_rock:773578979377807371> <:rps_paper:773579262048469062> <:rps_scissors:773579699565101117>',
-					value: 'test'
-				}
-			]
+			thumbnail: {
+				url: 'https://media.discordapp.net/attachments/755762464184074334/773581913414828062/rps.png'
+			},
+			description: '<:rps_rock:773578979377807371> <:rps_paper:773579262048469062> <:rps_scissors:773579699565101117>'
 		};
 		message.channel.send({embed: mbd});
-		}
-		catch (err) { message.channel.send(err.message); }
+		} //
+		catch (err) { message.channel.send(err.message); } //
 	}
 	else if (cmd[0] == '~testcommand') {
 		
