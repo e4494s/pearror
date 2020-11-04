@@ -346,22 +346,18 @@ client.on('message', message => {
 		message.channel.send(new_msg);
 	}
 	else if (cmd[0] == '~me') {
-		try {
-			let auth = message.author;
-			let mbd = {
-				color: 0xffff00,
-				author: {
-					name: `${auth.username}#${auth.discriminator}`,
-					icon_url: auth.avatarURL
-				}
-			};
-			message.channel.send({embed: mbd});
-		}
-		catch(err) {
-			message.channel.send(err.message);
-		}
+		let auth = message.author;
+		let mbd = {
+			color: 0xffff00,
+			author: {
+				name: `${auth.username}#${auth.discriminator}`,
+				icon_url: auth.avatarURL
+			}
+		};
+		message.channel.send({embed: mbd});
 	}
 	else if (cmd[0] == '~rockpaperscissors' || '~rps') {
+		try { //
 		let mbd = {
 			color: 0xffffff,
 			author: {
@@ -376,6 +372,10 @@ client.on('message', message => {
 			]
 		}
 		message.channel.send({embed : mbd});
+		} //
+		catch(err) {
+			message.channel.send(err.message);
+		}
 	}
 	else if (cmd[0] == '~testcommand') {
 		
