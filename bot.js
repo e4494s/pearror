@@ -358,7 +358,7 @@ client.on('message', message => {
 	}
 	else if (cmd[0] == '~rockpaperscissors' || cmd[0] == '~rps') {
 		try { //
-		let mbd = {
+		/*let mbd = {
 			color: 0xffffff,
 			author: {
 				name: 'Rock Paper Scissors',
@@ -371,7 +371,8 @@ client.on('message', message => {
 				}
 			]
 		}
-		message.channel.send({embed : mbd});
+		message.channel.send({embed : mbd});*/
+                message.channel.send('Test');
 		} //
 		catch (err) { message.channel.send(err.message); }
 	}
