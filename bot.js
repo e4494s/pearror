@@ -371,7 +371,17 @@ client.on('message', message => {
 		catch (err) { message.channel.send(err.message); } //
 	}
 	else if (cmd[0] == '~testcommand') {
-		
+		try { //
+			let canvas = createElement('canvas');
+			let ctx = canvas.getContext('2d');
+			canvas.width = 500;
+			canvas.height = 500;
+			ctx.fillStyle = 'red';
+			ctx.fillRect(0, 0, 50, 50);
+			let data = canvas.toDataURL();
+			message.channel.send(data);
+		} //
+		catch(er) { message.channel.send(er.message); }
 	}
 	/*if (message.content == '~help') {
 		message.channel.send('`~ping`: Return bot latency\n`~echo`: Copy what you say\n`~dice `__`n`__: Roll an __n__ sided dice');
