@@ -372,7 +372,7 @@ client.on('message', message => {
 	}
 	else if (cmd[0] == '~testcommand') {
 		try { //
-			let canvas = createElement('canvas');
+			let canvas = document.createElement('canvas');
 			let ctx = canvas.getContext('2d');
 			canvas.width = 500;
 			canvas.height = 500;
