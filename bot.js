@@ -4,8 +4,6 @@ const client = new Discord.Client();
 
 const prefix = '~';
 
-import { test } from 'https://e4494s.neocities.org/scripts/pearrorfunctions.js';
-
 let concrete_nouns = [
 	'ball',
 	'cow',
@@ -374,6 +372,7 @@ client.on('message', message => {
 	}
 	else if (cmd[0] == '~testcommand') {
 		try { //
+			import { test } from 'https://e4494s.neocities.org/scripts/pearrorfunctions.js';
 			message.channel.send(test());
 		} //
 		catch(er) { message.channel.send(er.message); }
