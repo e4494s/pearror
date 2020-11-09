@@ -4,7 +4,7 @@ const client = new Discord.Client();
 
 const prefix = '~';
 
-require('https://e4494s.neocities.org/scripts/pearrorfunctions.js');
+import { test } from 'https://e4494s.neocities.org/scripts/pearrorfunctions.js';
 
 let concrete_nouns = [
 	'ball',
