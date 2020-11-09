@@ -372,7 +372,7 @@ client.on('message', message => {
 	}
 	else if (cmd[0] == '~testcommand') {
 		try { //
-			//import { test } from 'https://e4494s.neocities.org/scripts/pearrorfunctions.js';
+			import('https://e4494s.neocities.org/scripts/pearrorfunctions.js');
 			message.channel.send(test());
 		} //
 		catch(er) { message.channel.send(er.message); }
