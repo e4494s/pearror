@@ -2,7 +2,7 @@ const Discord = require('discord.js');
 
 const client = new Discord.Client();
 
-import * as module from '/functions.js';
+import('/functions.js');
 
 const prefix = '~';
 
@@ -375,7 +375,7 @@ client.on('message', message => {
 	else if (cmd[0] == '~testcommand') {
 		try { //
 			//import('https://e4494s.neocities.org/scripts/pearrorfunctions.js');
-			message.channel.send(module.test());
+			message.channel.send(test());
 		} //
 		catch(er) { message.channel.send(er.message); }
 	}
