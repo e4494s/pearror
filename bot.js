@@ -2,8 +2,6 @@ const Discord = require('discord.js');
 
 const client = new Discord.Client();
 
-let module = require('functions');
-
 const prefix = '~';
 
 let concrete_nouns = [
