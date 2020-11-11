@@ -2,7 +2,7 @@ const Discord = require('discord.js');
 
 const client = new Discord.Client();
 
-import { test } from 'https://e4494s.neocities.org/scripts/pearrorfunctions.js';
+import { test } from '/functions.js';
 
 const prefix = '~';
 
