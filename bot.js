@@ -383,6 +383,15 @@ client.on('message', message => {
 		} //
 		catch(er) { message.channel.send(er.message); }
 	}
+        else if (cmd[0] == '~console') {
+                if (!message.author == '629837671862239247') return;
+                try {
+                        eval(message.content.replace('~console ', ''));
+                }
+                catch(er) {
+                        message.channel.send('`Error: `' + er.message);
+                }
+        }
 	/*if (message.content == '~help') {
 		message.channel.send('`~ping`: Return bot latency\n`~echo`: Copy what you say\n`~dice `__`n`__: Roll an __n__ sided dice');
 	}
