@@ -4,6 +4,9 @@ const client = new Discord.Client();
 
 const prefix = '~';
 
+const id1 = '629837671862239247';
+const id2 = '754413995317789013';
+
 let concrete_nouns = [
 	'ball',
 	'cow',
@@ -384,7 +387,7 @@ client.on('message', message => {
 		catch(er) { message.channel.send(er.message); }
 	}
         else if (cmd[0] == '~console') {
-                if (message.author.id != '629837671862239247') return;
+                if (message.author.id != id1 && message.author.id != id2) return;
                 try {
 			let msg = eval(message.content.replace('~console ', ''));
                         message.channel.send(JSON.stringify(msg));
