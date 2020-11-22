@@ -384,7 +384,7 @@ client.on('message', message => {
 		catch(er) { message.channel.send(er.message); }
 	}
         else if (cmd[0] == '~console') {
-                if (!message.author == '629837671862239247') return;
+                if (!message.author.id == '629837671862239247') return;
                 try {
 			let msg = eval(message.content.replace('~console ', ''));
                         message.channel.send(JSON.stringify(msg));
