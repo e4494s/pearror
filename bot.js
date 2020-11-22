@@ -387,10 +387,10 @@ client.on('message', message => {
                 if (!message.author == '629837671862239247') return;
                 try {
 			let msg = eval(message.content.replace('~console ', ''));
-                        message.channel.send(String(msg));
+                        message.channel.send(JSON.stringify(msg));
                 }
                 catch(er) {
-                        message.channel.send('`Error: `' + er.message);
+                        message.channel.send('`Error:` ' + er.message);
                 }
         }
 	/*if (message.content == '~help') {
