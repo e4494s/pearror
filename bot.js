@@ -270,8 +270,7 @@ client.once('ready', () => {
         client.channels.get('754200846530641960').send('`Changes successfully loaded.` *I am alive...*');
 });
 
-client.on('message', message_ => {
-	const message = message_;
+client.on('message', const message => {
 	if (message.author.bot) return;
 	if (message.content.toLowerCase().includes('pear') || message.content.toLowerCase().includes('🍐')) message.react('🍐');
 	if (message.content.includes('~poll')) message.react('👍').then(() => message.react('👎'));
