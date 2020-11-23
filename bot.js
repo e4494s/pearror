@@ -445,7 +445,7 @@ client.on('message', message => {
     		message.channel.send(message.content.replace('~echo', ''));
     	}
 	else if (message.content.startsWith('~dice')) {
-		message.channel.send(Math.ceil(Math.random() * Number(message.content.replace('~dice ', ''))));
+		message.channel.send(Math.ceil(Math.random() * Number(message.content.replace('~dice ', '')))); //
 	}*/
 });
 
