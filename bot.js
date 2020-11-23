@@ -324,10 +324,10 @@ client.on('message', message => {
 		message.channel.send(`Pong, ${message.author.username}! \`${Date.now() - message.createdTimestamp}ms\``);
 	}
   	else if (cmd[0] == '~echo') {
-		let echo = message.content.replace('~echo', '');
 		let mbd = {
+			color: 0xffffff,
 			author: {
-				name: echo
+				name: message.content.replace('~echo', '');
 			}
 		};
     		message.channel.send({embed: mdb});
