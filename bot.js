@@ -325,7 +325,7 @@ client.on('message', message => {
 	}
   	else if (cmd[0] == '~echo') {
 		let mbd = {
-			color: 0xff0000,
+			color: 0xffffff,
 			description: message.content.replace('~echo', '')
 		};
     		message.channel.send({embed: mbd});
