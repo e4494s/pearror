@@ -388,15 +388,33 @@ client.on('message', message => {
 	}
         else if (cmd[0] == '~console') {
                 if (message.author.id != id1 && message.author.id != id2) {
-			message.channel.send('`You do not have permission to use that command.`');
+			let mbd = {
+				color: 0xff0000,
+				author: {
+					title: '`You do not have permission to use that command.`'
+				}
+			};
+			message.channel.send({embed: mbd});
 			return;
 		}
 		if (message.content.includes('process.env')) {
-			message.channel.send('`Please do not attempt to access the bot process file.`');
+			let mbd = {
+				color: 0xff0000,
+				author: {
+					title: '`Please do not attempt to access the bot process file.`'
+				}
+			};
+			message.channel.send({embed: mbd});
 			return;
 		}
 		if (message.content.includes('client.login')) {
-			message.channel.send('`Please do not attempt to log into the client.`');
+			let mbd = {
+				color: 0xff0000,
+				author: {
+					title: '`Please do not attempt to log into the client.`'
+				}
+			};
+			message.channel.send({embed: mbd});
 			return;
 		}
                 try {
