@@ -391,8 +391,8 @@ client.on('message', message => {
 			let mbd = {
 				color: 0xff0000,
 				fields: [{
-					name: '`You do not have permission to use that command.`',
-					value: null
+					name: '`Error`',
+					value: '`You do not have permission to use that command.`'
 				}]
 			};
 			message.channel.send({embed: mbd});
@@ -402,8 +402,8 @@ client.on('message', message => {
 			let mbd = {
 				color: 0xff0000,
 				fields: [{
-					name: '`Please do not attempt to access the bot process file.`',
-					value: null
+					name: '`Error`',
+					value: '`Please do not attempt to access the bot process file.`'
 				}]
 			};
 			message.channel.send({embed: mbd});
@@ -413,8 +413,8 @@ client.on('message', message => {
 			let mbd = {
 				color: 0xff0000,
 				fields: [{
-					name: '`Please do not attempt to log into the client.`',
-					value: null
+					name: '`Error`',
+					value: '`Please do not attempt to log into the client.`'
 				}]
 			};
 			message.channel.send({embed: mbd});
@@ -428,8 +428,8 @@ client.on('message', message => {
 			let mbd = {
 				color: 0xff0000,
 				fields: [{
-					name: '`Error:` ' + er.message,
-					value: null
+					name: '`Error:`'
+					value: er.message
 				}]
 			};
                         message.channel.send({embed: mbd});
