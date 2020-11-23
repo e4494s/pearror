@@ -428,7 +428,7 @@ client.on('message', message => {
 			let mbd = {
 				color: 0xff0000,
 				fields: [{
-					name: '`Error:`'
+					name: '`Error:`',
 					value: er.message
 				}]
 			};
