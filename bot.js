@@ -324,14 +324,11 @@ client.on('message', message => {
 		message.channel.send(`Pong, ${message.author.username}! \`${Date.now() - message.createdTimestamp}ms\``);
 	}
   	else if (cmd[0] == '~echo') {
-		try{
 		let mbd = {
 			color: 0xffffff,
 			description: message.content.replace('~echo', '')
 		};
-    		message.channel.send({embed: mdb});
-		}
-		catch(er){message.channel.send(er.message);}
+    		message.channel.send({embed: mbd});
     	}
 	else if (cmd[0] == '~dice') {
 		if (cmd.length == 1 || typeof(Number(cmd[1])) !== 'number') { message.channel.send('Please input a number of sides.'); return; }
