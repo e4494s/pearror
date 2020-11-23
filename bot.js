@@ -387,7 +387,14 @@ client.on('message', message => {
 		catch(er) { message.channel.send(er.message); }
 	}
         else if (cmd[0] == '~console') {
-                if (message.author.id != id1 && message.author.id != id2) return;
+                if (message.author.id != id1 && message.author.id != id2) {
+			message.channel.send('`You do not have permission to use that command.`');
+			return;
+		}
+		if (message.content.includes('process.env')) {
+			message.channel.send('`Please do not attemtpt to access the bot process file.`');
+			return;
+		}
                 try {
 			let msg = eval(message.content.replace('~console ', ''));
                         message.channel.send(JSON.stringify(msg));
