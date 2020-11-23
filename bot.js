@@ -397,6 +397,7 @@ client.on('message', message => {
 		}
 		if (message.content.includes('client.login')) {
 			message.channel.send('`Please do not attempt to log into the client.`');
+			return;
 		}
                 try {
 			let msg = eval(message.content.replace('~console ', ''));
