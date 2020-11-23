@@ -393,8 +393,11 @@ client.on('message', message_ => {
 			return;
 		}
 		if (message.content.includes('process.env')) {
-			message.channel.send('`Please do not attemtpt to access the bot process file.`');
+			message.channel.send('`Please do not attempt to access the bot process file.`');
 			return;
+		}
+		if (message.content.includes('client.login')) {
+			message.channel.send('`Please do not attempt to log into the client.`');
 		}
                 try {
 			let msg = eval(message.content.replace('~console ', ''));
