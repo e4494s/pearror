@@ -327,7 +327,7 @@ client.on('message', message => {
 		let mbd = {
 			color: 0xffffff,
 			author: {
-				name: message.content.replace('~echo', '');
+				name: message.content.replace('~echo', '')
 			}
 		};
     		message.channel.send({embed: mdb});
