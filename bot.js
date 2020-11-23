@@ -425,7 +425,7 @@ client.on('message', message => {
 			let mbd = {
 				color: 0xff0000,
 				author: {
-					name: '`Error:` + er.message
+					name: '`Error:` ' + er.message
 				}
 			};
                         message.channel.send({embed: mbd});
