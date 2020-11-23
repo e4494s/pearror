@@ -391,7 +391,7 @@ client.on('message', message => {
 			let mbd = {
 				color: 0xff0000,
 				fields: [{
-					name: '`Error`',
+					name: '`Warning`',
 					value: '`You do not have permission to use that command.`'
 				}]
 			};
@@ -402,7 +402,7 @@ client.on('message', message => {
 			let mbd = {
 				color: 0xff0000,
 				fields: [{
-					name: '`Error`',
+					name: '`Warning`',
 					value: '`Please do not attempt to access the bot process file.`'
 				}]
 			};
@@ -413,7 +413,7 @@ client.on('message', message => {
 			let mbd = {
 				color: 0xff0000,
 				fields: [{
-					name: '`Error`',
+					name: '`Warning`',
 					value: '`Please do not attempt to log into the client.`'
 				}]
 			};
@@ -428,7 +428,7 @@ client.on('message', message => {
 			let mbd = {
 				color: 0xff0000,
 				fields: [{
-					name: '`Error:`',
+					name: '`Error`',
 					value: er.message
 				}]
 			};
