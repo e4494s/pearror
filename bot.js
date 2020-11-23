@@ -390,9 +390,10 @@ client.on('message', message => {
                 if (message.author.id != id1 && message.author.id != id2) {
 			let mbd = {
 				color: 0xff0000,
-				author: {
-					name: '`You do not have permission to use that command.`'
-				}
+				fields: [{
+					name: '`You do not have permission to use that command.`',
+					value: null
+				}]
 			};
 			message.channel.send({embed: mbd});
 			return;
@@ -400,9 +401,10 @@ client.on('message', message => {
 		if (message.content.includes('process.env')) {
 			let mbd = {
 				color: 0xff0000,
-				author: {
-					name: '`Please do not attempt to access the bot process file.`'
-				}
+				fields: [{
+					name: '`Please do not attempt to access the bot process file.`',
+					value: null
+				}]
 			};
 			message.channel.send({embed: mbd});
 			return;
@@ -410,9 +412,10 @@ client.on('message', message => {
 		if (message.content.includes('client.login')) {
 			let mbd = {
 				color: 0xff0000,
-				author: {
-					name: '`Please do not attempt to log into the client.`'
-				}
+				fields: [{
+					name: '`Please do not attempt to log into the client.`',
+					value: null
+				}]
 			};
 			message.channel.send({embed: mbd});
 			return;
@@ -424,9 +427,10 @@ client.on('message', message => {
                 catch(er) {
 			let mbd = {
 				color: 0xff0000,
-				author: {
-					name: '`Error:` ' + er.message
-				}
+				fields: [{
+					name: '`Error:` ' + er.message,
+					value: null
+				}]
 			};
                         message.channel.send({embed: mbd});
                 }
