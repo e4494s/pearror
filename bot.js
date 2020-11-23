@@ -326,9 +326,10 @@ client.on('message', message => {
   	else if (cmd[0] == '~echo') {
 		let mbd = {
 			color: 0xffffff,
-			author: {
-				name: message.content.replace('~echo', '')
-			}
+			fields: [{
+				name: message.content.replace('~echo', ''),
+				value: 'test'
+			}]
 		};
     		message.channel.send({embed: mdb});
     	}
