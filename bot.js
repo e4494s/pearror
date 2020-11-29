@@ -385,9 +385,7 @@ client.on('message', message => {
 				message.channel.send(num);
 				if (num < 15) requestAnimationFrame(upNum);
 			}
-  			setTimeout(() => {
-    				upNum();
-			}, 1000);
+  			setTimeout(upNum, 1000);
 		} //
 		catch(er) { message.channel.send(er.message); }
 	}
