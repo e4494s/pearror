@@ -378,8 +378,16 @@ client.on('message', message => {
 	}
 	else if (cmd[0] == '~testcommand') {
 		try { //
-			//import('https://e4494s.neocities.org/scripts/pearrorfunctions.js');
-			message.channel.send(test());
+			msg = message.channel.send('0');
+			let num = 0;
+			function upNum() {
+				num++;
+				message.channel.send(num);
+				if (num < 15) requestAnimationFrame(upNum);
+			}
+  			setTimeout(() => {
+    				upNum();
+			}, 1000);
 		} //
 		catch(er) { message.channel.send(er.message); }
 	}
