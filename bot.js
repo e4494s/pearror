@@ -378,7 +378,7 @@ client.on('message', message => {
 	}
 	else if (cmd[0] == '~testcommand') {
 		try { //
-			message.channel.send('Beep').then((sentMessage) => setTimeout(sentMessage.edit('Boop'), 1000));
+			message.channel.send(JSON.stringify(message.channel.send('Beep').then((sentMessage) => setTimeout(sentMessage.edit('Boop'), 1000))));
 		} //
 		catch(er) { message.channel.send(er.message); }
 	}
