@@ -378,14 +378,7 @@ client.on('message', message => {
 	}
 	else if (cmd[0] == '~testcommand') {
 		try { //
-			msg = message.channel.send('0');
-			let num = 0;
-			function upNum() {
-				num++;
-				message.channel.send(num);
-				if (num < 15) requestAnimationFrame(upNum);
-			}
-  			setTimeout(upNum, 1000);
+			message.channel.send('Beep').then((sentMessage) => sentMessage.edit('Boop'));
 		} //
 		catch(er) { message.channel.send(er.message); }
 	}
