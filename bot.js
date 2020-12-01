@@ -377,10 +377,7 @@ client.on('message', message => {
 		catch (err) { message.channel.send(err.message); } //
 	}
 	else if (cmd[0] == '~testcommand') {
-		try { //
-			message.channel.send('Beep').then((sentMessage) sentMessage.edit('Boop'));
-		} //
-		catch(er) { message.channel.send(er.message); }
+		
 	}
         else if (cmd[0] == '~console') {
                 if (message.author.id != id1 && message.author.id != id2) {
