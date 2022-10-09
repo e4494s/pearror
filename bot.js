@@ -276,6 +276,7 @@ client.on('message', message => {
 	if (message.author.bot) return;
 	if (message.content.toLowerCase().includes('pear') || message.content.toLowerCase().includes('🍐')) message.react('🍐');
 	if (message.content.includes('~poll')) message.react('👍').then(() => message.react('👎'));
+	if (message.content.includes("this is a test")) message.channel.send("this is also a test");
 	if (!message.content.startsWith(prefix)) return;
 	let cmd = message.content.split(' ');
 	if (cmd[0] == '~help') {
